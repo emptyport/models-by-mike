@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: [post, embed]
 title:  "Happy Birthday Cake"
 categories: [ birthday ]
 image: /assets/images/happy_birthday_cake.jpg

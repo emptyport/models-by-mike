@@ -2,6 +2,7 @@
 layout: default
 archive: false
 post_class: post-template
+permalink: ":layout/:title/"
 ---
 
 <!-- Viewer comes from here: https://github.com/AVGP/gltf-viewer -->
@@ -52,7 +53,7 @@ post_class: post-template
 
             <a id="model-download" class="model-download-link" href={{page.model}} onclick="ga('send', 'event', 'link', 'Download', '{{page.title}}');" download>Download!</a>
 
-            <a id="model-share" class="model-download-link" target="_blank" href="https://facebook.com/sharer.php?u={{site.url}}{{ page.url}}" onclick="ga('send', 'event', 'link', 'Share', '{{page.title}}');window.open(this.href, 'facebook-share', 'width=550,height=435');return false;">
+            <a id="model-share" class="model-download-link" target="_blank" href="https://facebook.com/sharer.php?u={{site.url}}{{ page.url | replace: '/post', '/embed'}}" onclick="ga('send', 'event', 'link', 'Share', '{{page.title}}');window.open(this.href, 'facebook-share', 'width=550,height=435');return false;">
                 Share on Facebook!
             </a>
 

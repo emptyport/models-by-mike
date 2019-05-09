@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: [post, embed]
 title:  "Memorial Day - Arlington Gravestone"
 categories: [ holiday ]
 image: /assets/images/memorial_day_arlington_gravestone.jpg

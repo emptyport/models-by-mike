@@ -15,7 +15,7 @@ title: Home
 
     {% for post in site.posts %}
 
-        {% if post.featured == true %}
+        {% if post.featured == true and post.url contains '/post' %}
 
             {% include featuredbox.html %}
 
@@ -42,7 +42,10 @@ title: Home
 
         {% for post in paginator.posts %}
 
-        {% include postbox.html %}
+        {% if post.url contains '/post' %}
+
+            {% include postbox.html %}
+        {% endif %}
 
         {% endfor %}
 
