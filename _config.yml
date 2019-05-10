@@ -65,3 +65,10 @@ kramdown:
 lazyimages: "enabled"
 
 exclude: [changelog.md, LICENSE.txt, README.md, Gemfile, Gemfile.lock]
+
+defaults:
+  -
+    scope:
+      path: "assets/bower_components/*"
+    values:
+      sitemap: false

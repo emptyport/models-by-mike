@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Mediumish Template for Jekyll
-permalink: /about
+permalink: /about/
 ---
 
 <div class="row justify-content-between">
