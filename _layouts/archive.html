@@ -13,7 +13,9 @@ title: Archive
 
 {% for post in page.posts %}
 
-    {% include postbox.html %}
+    {% if page.url contains '/post' %}
+        {% include postbox.html %}
+    {% endif %}
 
 {% endfor %}
 
