@@ -32,12 +32,16 @@ var documents = [
                 "url": "{{ site.url }}{{site.baseurl}}{{ page.url }}",
                 "title": "{{ page.title }}",
                 "body": "{{ page.date | date: "%Y/%m/%d" }} - {{ page.content | markdownify | replace: '.', '. ' | replace: '</h2>', ': ' | replace: '</h3>', ': ' | replace: '</h4>', ': ' | replace: '</p>', ' ' | strip_html | strip_newlines | replace: '  ', ' ' | replace: '"', ' ' }}"{% assign counter = counter | plus: 1 %}
+            },
+        {% endif %}
+    {% endfor %}
+            {
+                "id": "",
+                "url": "",
+                "title": "",
+                "body": ""
             }
-        {% endif %}
-        {% if forloop.last %}
-        {% else %}, 
-        {% endif %}
-    {% endfor %}];
+];
 
 var idx = lunr(function () {
     this.ref('id')
