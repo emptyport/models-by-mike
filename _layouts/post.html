@@ -11,6 +11,8 @@ permalink: ":layout/:title/"
 
 {% include gltf-viewer.html %}
 
+{% include instructions.html %}
+
 <!-- Begin Article
 ================================================== -->
 <div class="container">
@@ -51,11 +53,17 @@ permalink: ":layout/:title/"
                 {{content}}
             </div>
 
-            <a id="model-download" class="model-download-link" href={{page.model}} onclick="ga('send', 'event', 'link', 'Download', '{{page.title}}');" download>Download!</a>
+            <div id="link-box">
 
-            <a id="model-share" class="model-download-link" target="_blank" href="https://facebook.com/sharer/sharer.php?u={{site.url | replace: 'https', 'http'}}{{ page.url | replace: '/post', '/embed'}}" onclick="ga('send', 'event', 'link', 'Share', '{{page.title}}');window.open(this.href, 'facebook-share', 'width=550,height=435');return false;">
-                Share on Facebook!
-            </a>
+                <a id="model-download" class="model-download-link" href={{page.model}} onclick="ga('send', 'event', 'link', 'Download', '{{page.title}}');" download>Download!</a>
+
+                <a id="model-share" class="model-download-link" target="_blank" href="https://facebook.com/sharer/sharer.php?u={{site.url | replace: 'https', 'http'}}{{ page.url | replace: '/post', '/embed'}}" onclick="ga('send', 'event', 'link', 'Share', '{{page.title}}');window.open(this.href, 'facebook-share', 'width=550,height=435');return false;">
+                    Share on Facebook!
+                </a>
+
+                <a class="model-download-link" href="#" onclick="showInstructions();">Instructions</a>
+                
+            </div>
 
             <!-- Post Date -->
             <p>

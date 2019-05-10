@@ -24,4 +24,19 @@
 	font-size: 1.5em;
 	border: 2px solid #00AB6B;
 	padding: 5px;
+	text-align: center;
+}
+
+#link-box {
+	display: flex;
+	flex-direction: column;
+	
+}
+
+@media (min-width: 768px) {
+	#link-box {
+		display: flex;
+		flex-direction: row;
+		justify-content: space-evenly;
+	}
 }
