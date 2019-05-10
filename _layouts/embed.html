@@ -8,9 +8,10 @@
 <title>{{ page.title }} | {{site.name}}</title>
 
 {% if page.model %}
-    <meta property="og:type" content="threed.asset" /> 
+    <meta property="og:title" content="{{page.title}}" />
+    <meta property="og:type" content="threed.asset" />
+    <meta property="og:description" content="3D model of {{page.title}} from Models by Mike" /> 
     <meta property="og:asset" content="{{site.url}}{{ page.model }}" />
-    <meta property="og:image" content="" />
 {% endif %}
 
 <body>
