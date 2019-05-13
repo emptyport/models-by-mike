@@ -11,6 +11,9 @@ mailchimp-list: ''
 include: ["_pages"]
 permalink: /:title/
 
+timezone: America/Chicago
+future: true
+
 # Authors
 #authors:
 #  sal:
