@@ -1,0 +1,80 @@
+<script src="/assets/js/three.min.js"></script>
+<script src="/assets/js/GLTF2Loader.js"></script>
+<script src="/assets/js/OrbitControls.js"></script>
+
+<div id="viewer-container"></div>
+
+<script>
+
+    const container = document.getElementById("viewer-container");
+
+    const WIDTH = container.offsetWidth;
+    const HEIGHT = container.offsetWidth;
+
+    const VIEW_ANGLE = 75;
+    const ASPECT = WIDTH / HEIGHT;
+    const NEAR = 0.1;
+    const FAR = 10000;
+
+    const renderer = new THREE.WebGLRenderer();
+    const camera = new THREE.PerspectiveCamera(VIEW_ANGLE, ASPECT, NEAR, FAR);
+
+    const scene = new THREE.Scene();
+
+    const controls = new THREE.OrbitControls(camera, container);
+
+    scene.add(camera);
+    scene.add(new THREE.AmbientLight(0xFFFFFF));
+    renderer.setClearColor(0xFFFFFF);
+
+    renderer.setSize(WIDTH, HEIGHT);
+
+    container.appendChild(renderer.domElement);
+
+    // https://discourse.threejs.org/t/camera-zoom-to-fit-object/936/3
+    const fitCameraToObject = function (camera, object, offset, controls) {
+        offset = offset || 1.1;
+        const boundingBox = new THREE.Box3();
+        // get bounding box of object - this will be used to setup controls and camera
+        boundingBox.setFromObject(object);
+        const center = boundingBox.getCenter();
+        const size = boundingBox.getSize();
+        // get the max side of the bounding box (fits to width OR height as needed )
+        const maxDim = Math.max(size.x, size.y, size.z);
+        const fov = camera.fov * (Math.PI / 180);
+        let cameraZ = Math.abs(maxDim / 4 * Math.tan(fov * 2));
+        cameraZ *= offset; // zoom out a little so that objects don't fill the screen
+        camera.position.z = cameraZ;
+        const minZ = boundingBox.min.z;
+        const cameraToFarEdge = (minZ < 0) ? -minZ + cameraZ : cameraZ - minZ;
+        camera.far = cameraToFarEdge * 3;
+        camera.updateProjectionMatrix();
+        if (controls) {
+            // set camera to rotate around center of loaded object
+            controls.target = center;
+            // prevent camera from zooming out far enough to create far plane cutoff
+            controls.maxDistance = cameraToFarEdge * 2;
+            controls.saveState();
+            controls.update();
+        } else {
+            camera.lookAt(center)
+        }
+    }
+
+    const loader = new THREE.GLTF2Loader()
+    loader.setCrossOrigin('');
+    loader.load("{{page.model}}", function (gltf) {
+        scene.add(gltf.scene);
+        fitCameraToObject(camera, gltf.scene, 1.25, controls);
+    });
+
+    requestAnimationFrame(update);
+
+    function update() {
+        // Draw!
+        renderer.render(scene, camera);
+        // Schedule the next frame.
+        requestAnimationFrame(update);
+    }
+
+</script>

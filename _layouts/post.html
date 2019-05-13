@@ -7,9 +7,9 @@ permalink: ":layout/:title/"
 
 <!-- Viewer comes from here: https://github.com/AVGP/gltf-viewer -->
 
-<script src="https://unpkg.com/@webcomponents/webcomponentsjs@%5E2/"></script>
-
-{% include gltf-viewer.html %}
+<!--script src="https://unpkg.com/@webcomponents/webcomponentsjs@%5E2/"></script
+<script src="/assets/bower_components/webcomponentsjs/webcomponents-lite.js"></script>
+-->
 
 {% include instructions.html %}
 
@@ -35,7 +35,7 @@ permalink: ":layout/:title/"
             </div>
 
             <!-- Model Viewer -->
-            <gltf-viewer id="model-viewer" interactive src="{{page.model}}"></gltf-viewer>
+            {% include viewer.html %}
 
             <!-- Post Content -->
             <div class="article-post">
