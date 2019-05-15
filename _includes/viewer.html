@@ -61,9 +61,34 @@
         }
     }
 
+    /*var urls = [
+        '/assets/cubemap/pos-x.png',
+        '/assets/cubemap/neg-x.png',
+        '/assets/cubemap/pos-y.png',
+        '/assets/cubemap/neg-y.png',
+        '/assets/cubemap/pos-z.png',
+        '/assets/cubemap/neg-z.png'
+    ];*/
+    var urls = [
+        '/assets/cubemap/0001.png',
+        '/assets/cubemap/0002.png',
+        '/assets/cubemap/0003.png',
+        '/assets/cubemap/0004.png',
+        '/assets/cubemap/0005.png',
+        '/assets/cubemap/0006.png'
+    ];
+    var cubemap = THREE.ImageUtils.loadTextureCube(urls);
+    cubemap.format = THREE.RGBFormat;
+
     const loader = new THREE.GLTF2Loader()
     loader.setCrossOrigin('');
     loader.load("{{page.model}}", function (gltf) {
+        gltf.scene.traverse((node) => {
+            if(node.isMesh) {
+                node.material.envMap = cubemap;
+            }
+        });
+
         scene.add(gltf.scene);
         fitCameraToObject(camera, gltf.scene, 1.25, controls);
     });
