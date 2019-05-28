@@ -15,7 +15,7 @@ function showInstructions() {
                 <div class="modal-body">
                     <p>There are a couple different ways to share a 3D post.</p>
                     <h4>Download the model</h4>
-                    <p>The first way to share a 3D post is to download the model and then upload it to Facebook. You must be on a desktop or laptop computer to do this.</p>
+                    <p>The first way to share a 3D post is to download the model and then upload it to Facebook. This method allows you to change the background color of the post. You must be on a desktop or laptop computer to do this.</p>
                         <ol>
                             <li>Click the "Download!" button.</li>
                             <li>Go to Facebook and click "Write a post..." to start a post.</li>
