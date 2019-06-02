@@ -34,14 +34,14 @@
 	text-align: center;
 }
 
-#link-box {
+.link-box {
 	display: flex;
 	flex-direction: column;
 	
 }
 
 @media (min-width: 768px) {
-	#link-box {
+	.link-box {
 		display: flex;
 		flex-direction: row;
 		justify-content: space-evenly;

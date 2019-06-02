@@ -53,13 +53,21 @@ permalink: ":layout/:title/"
                 {{content}}
             </div>
 
-            <div id="link-box">
+            <div class="link-box">
 
                 <a id="model-download" class="model-download-link" href={{page.model}} onclick="ga('send', 'event', 'link', 'Download', '{{page.title}}');" download>Download!</a>
 
                 <a id="model-share" class="model-download-link" target="_blank" href="https://facebook.com/sharer/sharer.php?u={{site.url | replace: 'https', 'http'}}{{ page.url }}" onclick="ga('send', 'event', 'link', 'Share', '{{page.title}}');window.open(this.href, 'facebook-share', 'width=550,height=435');return false;">
                     Share on Facebook!
                 </a>
+
+                {% if page.fb_camera %}
+                    <a id="model-fbcamera" class="model-download-link" href={{page.fb_camera}} onclick="ga('send', 'event', 'link', 'FBCamera', '{{page.title}}');">Use in Facebook camera!</a>
+                {% endif %}
+
+                {% if page.snapchat %}
+                    <a id="model-snapchat" class="model-download-link" href={{page.snapchat}} onclick="ga('send', 'event', 'link', 'Snapchat', '{{page.title}}');">Use on Snapchat!</a>
+                {% endif %}
 
                 <a class="model-download-link" href="#" onclick="showInstructions();">Instructions</a>
                 
