@@ -5,7 +5,7 @@ description: "Free 3D models for sharing on Facebook."
 logo: 'assets/images/logo.png'
 favicon: 'assets/images/logo.png'
 baseurl: ''
-url: "https://3d.michaelporter.dev"
+url: "https://modelsbymike3d.com"
 google_analytics: 'UA-137935194-2'
 mailchimp-list: ''
 include: ["_pages"]
