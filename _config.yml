@@ -1,9 +1,9 @@
 # Site
 name: "Models by Mike"
 title: "Models by Mike"
-description: "Free 3D models for sharing on Facebook."
+description: "Camera effects for Snapchat & Facebook and free 3D models for Facebook."
 logo: 'assets/images/logo.png'
-favicon: 'assets/images/logo.png'
+favicon: 'assets/images/favicon.ico'
 baseurl: ''
 url: "https://modelsbymike3d.com"
 google_analytics: 'UA-137935194-2'
