@@ -1,31 +1,31 @@
-title: It's Mike!
+title: Models by Mike
 description: > # this means to ignore newlines until "baseurl:"
-  This is my personal website. There are about a million people named Michael Porter, so hopefully you found the right one!
+  Hey there! I make Snapchat lenses. Usually weird, sometimes good.
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "https://michaelporter.dev" # the base hostname & protocol for your site, e.g. http://example.com
+url: "https://modelsbymike3d.com" # the base hostname & protocol for your site, e.g. http://example.com
 include: ["_pages"]
 permalink: /blog/:title/
 
 lang: en_US
 
-twitter_username: MikeTheBiochem
-github_username:  emptyport
+twitter_username: modelsbymike3d
 
 twitter:
-  username: MikeTheBiochem
+  username: modelsbymike3d
   card: summary
 
 facebook:
-  app_id: ''
-  publisher: ''
+  app_id: '187751205490599'
+  publisher: 'https://www.facebook.com/modelsbymike3d'
   admins: ''
 
 social:
   name: Michael Porter
   links:
-    - https://twitter.com/MikeTheBiochem
-    - https://www.linkedin.com/in/mtporter
-    - https://github.com/emptyport
+    - https://twitter.com/modelsbymike3d
+    - https://www.snapchat.com/add/modelsbymike3d
+    - https://www.facebook.com/modelsbymike3d
+    - https://www.instagram.com/modelsbymike3d
 
 webmaster_verifications:
   google: ''
@@ -34,7 +34,7 @@ webmaster_verifications:
   yandex: ''
   baidu: '' 
 
-logo: ""
+logo: "/images/plain-logo.jpg"
 
 # Build settings
 markdown: kramdown

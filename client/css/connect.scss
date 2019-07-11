@@ -1,11 +1,14 @@
 .connect {
-    display: grid;
+    margin-top: 20px;
     height: auto;
-    align-items: center;
-    grid-template-columns: 50% 50%;
+}
+
+.centered-text {
+    text-align: center;
 }
 
 .connect-subsection {
+    margin: 20px;
 }
 
 .social-subsection {
@@ -32,8 +35,21 @@
     border-left: 5px solid red;
 }
 
-.social-icon {
-    font-size: 4em;
+.social-icons {
+    text-align: center;
+    display: flex;
+    align-items: center;
+    width: auto;
+}
+
+.icon {
+    flex: 1 1 auto;
+}
+
+.icon a {
+    all: unset;
+    text-decoration: none;
+    cursor: pointer;
 }
 
 #connect-form {
@@ -72,13 +88,6 @@
 }
 
 @media(max-width: 600px) {
-    .connect {
-        display: grid;
-        height: auto;
-        align-items: center;
-        grid-template-columns: 1fr;
-        grid-template-rows: 1fr 1fr;
-    }
 
     #connect-form {
         width: 90%;

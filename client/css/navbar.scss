@@ -2,12 +2,13 @@ $nav-height: 30px;
 
 nav {
     font-family: 'nunito_sans_regular';
+    font-size: 1.4em;
     position: fixed;
     top: 0;
     z-index: 2;
     width: 100%;
     height: $nav-height;
-    background-color: white;
+    background: inherit;
 }
 
 .nav-list {
@@ -27,6 +28,12 @@ nav {
 }
 
 .nav-link {
-    color: black;
+    color: white;
     text-decoration: none;
 }
+
+@media (max-width: 600px) {
+    nav {
+        font-size: 1em;
+    }
+  }
