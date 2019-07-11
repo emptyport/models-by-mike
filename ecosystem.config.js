@@ -1,6 +1,6 @@
 module.exports = {
   apps : [{
-    name: 'michaelporter',
+    name: 'modelsbymike',
     script: './server.js',
 
     max_memory_restart: '1G',
