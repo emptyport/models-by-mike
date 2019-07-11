@@ -1,0 +1,66 @@
+title: Models by Mike
+description: > # this means to ignore newlines until "baseurl:"
+  Hey there! I make Snapchat lenses. Usually weird, sometimes good.
+baseurl: "" # the subpath of your site, e.g. /blog
+url: "https://modelsbymike3d.com" # the base hostname & protocol for your site, e.g. http://example.com
+include: ["_pages"]
+permalink: /blog/:title/
+
+lang: en_US
+
+twitter_username: modelsbymike3d
+
+twitter:
+  username: modelsbymike3d
+  card: summary
+
+facebook:
+  app_id: '187751205490599'
+  publisher: 'https://www.facebook.com/modelsbymike3d'
+  admins: ''
+
+social:
+  name: Michael Porter
+  links:
+    - https://twitter.com/modelsbymike3d
+    - https://www.snapchat.com/add/modelsbymike3d
+    - https://www.facebook.com/modelsbymike3d
+    - https://www.instagram.com/modelsbymike3d
+
+webmaster_verifications:
+  google: ''
+  bing: ''
+  alexa: ''
+  yandex: ''
+  baidu: '' 
+
+logo: "/images/plain-logo.jpg"
+
+# Build settings
+markdown: kramdown
+
+plugins:
+  - jekyll-responsive-image
+  - jekyll-sitemap
+  - jekyll-seo-tag
+
+sass:
+  sass_dir: css
+
+# Responsive images
+responsive_image:
+  template: _includes/responsive-image.html
+  default_quality: 90
+  sizes:
+    - width: 20 # lq
+      quality: 10
+    - width: 480
+      quality: 80
+    - width: 800
+    - width: 1400
+  auto_rotate: false
+  strip: true
+  base_path: images
+  output_path_format: images/resized/%{width}/%{basename}
+  save_to_source: false
+  cache: false

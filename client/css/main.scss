@@ -1,0 +1,104 @@
+---
+---
+
+@import 'lazysize';
+@import 'nunito_sans';
+@import 'navbar';
+@import 'connect';
+@import 'portfolio';
+@import 'blog';
+
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  background-color: purple;
+  background: radial-gradient(at bottom right, black, purple);
+  background-attachment: fixed;
+  color: white;
+  font-family: 'nunito_sans_regular';
+}
+
+#page-content {
+  padding-top: 30px;
+  height: 100%;
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+#body-content {
+  display: grid;
+  grid-template-rows: 1fr auto;
+}
+
+#main-logo {
+  width: 70%;
+  max-width: 600px;
+  margin: auto;
+  display: block;
+  margin-top: 50px;
+}
+
+#gorilla-lisa {
+  width: 100%;
+  max-width: 600px;
+  margin: auto;
+  display: block;
+}
+
+.home-container {
+  margin: auto;
+  display: block;
+  margin-bottom: 50px;
+}
+
+.blur-up {
+  max-width: 600px;
+  margin: auto;
+  display: block;
+}
+
+.active {
+  border-bottom: 2px solid white;
+}
+
+.home {
+}
+
+footer {
+  font-size: 11px;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+
+.footer {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  background: inherit;
+}
+
+.footer-item {
+  flex: 1 1 auto;
+}
+
+.footer-item a {
+  all: unset;
+  cursor: pointer;
+}
+
+.left-align {
+  text-align: left;
+}
+
+.right-align {
+  text-align: right;
+}
+
+@media (max-width: 600px) {
+  #page-content {
+    font-size: 1.2em;
+    margin: 0;
+  }
+}

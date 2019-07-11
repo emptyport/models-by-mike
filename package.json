@@ -1,0 +1,40 @@
+{
+  "name": "example-create-react-app-express",
+  "version": "1.0.0",
+  "description": "Example on using create-react-app with a Node Express Backend",
+  "author": {
+    "name": "Esau Silva",
+    "twitter": "@_esausilva",
+    "url": "https://esausilva.com"
+  },
+  "license": "MIT",
+  "scripts": {
+    "client": "cd client && bundle && JEKYLL_ENV=development bundle exec jekyll build --watch --incremental",
+    "server": "nodemon server.js",
+    "dev": "NODE_ENV='development' concurrently --kill-others-on-fail \"npm run server\" \"npm run client\"",
+    "start": "NODE_ENV='production' nodemon server.js",
+    "build": "cd client && bundle && JEKYLL_ENV=production bundle exec jekyll build && cd .. && npm install"
+  },
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "cookie-parser": "^1.4.4",
+    "express": "^4.16.4",
+    "lunr": "^2.3.6",
+    "nodemailer": "^6.1.0"
+  },
+  "devDependencies": {
+    "concurrently": "^4.1.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/esausilva/example-create-react-app-express.git"
+  },
+  "bugs": {
+    "url": "https://github.com/esausilva/example-create-react-app-express/issues"
+  },
+  "keywords": [
+    "node",
+    "express",
+    "create-react-app"
+  ]
+}

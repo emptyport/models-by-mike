@@ -1,0 +1,39 @@
+$nav-height: 30px;
+
+nav {
+    font-family: 'nunito_sans_regular';
+    font-size: 1.4em;
+    position: fixed;
+    top: 0;
+    z-index: 2;
+    width: 100%;
+    height: $nav-height;
+    background: inherit;
+}
+
+.nav-list {
+    width: 100%;
+    list-style-type: none;
+    padding: 0px;
+    margin: 0px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.nav-item {
+    height: $nav-height;
+    flex: 1 1 auto;
+    text-align: center;
+}
+
+.nav-link {
+    color: white;
+    text-decoration: none;
+}
+
+@media (max-width: 600px) {
+    nav {
+        font-size: 1em;
+    }
+  }
