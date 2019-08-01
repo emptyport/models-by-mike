@@ -4,13 +4,18 @@ const path = require('path');
 
 module.exports = function(app) {
   app.post('/api/contact', (req, res) => {
-    if(req.body.trial !== '4') {
-      res.sendFile(path.join(__dirname, '../client/_site', 'spam-contact', 'index.html'));
+
+    req.body.name = decodeURIComponent(req.body.name);
+    if(req.body.challenge !== '4') {
+      res.send({
+        response: "error",
+        msg: "Challenge question was answered incorrectly"
+      });
       return;
     }
 
     let mailTemplate = `
-      <h3>New message from ${req.body.firstname} ${req.body.lastname} ${req.body.email}</h3>
+      <h3>New message from ${req.body.name} ${req.body.email}</h3>
       <p>${req.body.message}</p>
     `;
 
@@ -30,13 +35,25 @@ module.exports = function(app) {
       from: config.EM_USERNAME,
       to: config.EMAIL,
       replyTo: req.body.email,
-      subject: `${req.body.firstname} ${req.body.lastname} via modelsbymike3d.com`,
+      subject: `${req.body.name} via modelsbymike3d.com`,
       html: mailTemplate
     }
 
     transporter.sendMail(mailOptions, function(err, info) {
-      if(err) { console.log(err); res.sendFile(path.join(__dirname, '../client/_site', 'failed-contact', 'index.html')); return; }
-      else { console.log(info); res.sendFile(path.join(__dirname, '../client/_site', 'good-contact', 'index.html')); }
+      if(err) {
+        console.log(err); res.send({
+          response: "error",
+          msg: "There was an error processing your message. Please try again later"
+        });
+        return; 
+      }
+      else {
+        console.log(info);
+        res.send({
+          response: "success",
+          status: 200
+        });
+      }
     });   
   });
 

@@ -9,11 +9,11 @@
   },
   "license": "MIT",
   "scripts": {
-    "client": "cd client && bundle && JEKYLL_ENV=development bundle exec jekyll build --watch --incremental",
+    "client": "cd frontend && npm install && gatsby develop",
     "server": "nodemon server.js",
     "dev": "NODE_ENV='development' concurrently --kill-others-on-fail \"npm run server\" \"npm run client\"",
     "start": "NODE_ENV='production' nodemon server.js",
-    "build": "cd client && bundle && JEKYLL_ENV=production bundle exec jekyll build && cd .. && npm install"
+    "build": "cd frontend && npm install && gatsby build && cd .. && npm install"
   },
   "dependencies": {
     "body-parser": "^1.18.3",

@@ -13,10 +13,10 @@ app.use(cookieParser());
 require('./api/contact')(app);
 require('./api/blogSearch')(app);
 
-app.use(express.static(path.join(__dirname, 'client/_site')));
+app.use(express.static(path.join(__dirname, 'frontend/public')));
 
 app.get('*', function(req, res){
-  res.sendFile(path.join(__dirname, './client/_site', '404', 'index.html'), 404);
+  res.sendFile(path.join(__dirname, './frontend/public', '404', 'index.html'), 404);
 });
 
 app.listen(port, () => console.log(`Listening on port ${port}`));
