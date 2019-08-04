@@ -6,6 +6,8 @@ module.exports = function(app) {
   app.post('/api/contact', (req, res) => {
 
     req.body.name = decodeURIComponent(req.body.name);
+    req.body.message = decodeURIComponent(req.body.message);
+    req.body.email = decodeURIComponent(req.body.email);
     if(req.body.challenge !== '4') {
       res.send({
         response: "error",
