@@ -1,5 +1,6 @@
 import React from "react"
 import { useStaticQuery, graphql } from "gatsby"
+import SectionTitle from "./sectiontitle"
 import PortfolioItems from "./items-portfolio"
 
 export default function() {
@@ -22,7 +23,7 @@ export default function() {
 					            childImageSharp {
 									fluid(maxWidth: 1920) {
 					                  srcSet
-					                  ...GatsbyImageSharpFluid
+					                  ...GatsbyImageSharpFluid_noBase64
 					                }
 					              	id
 					            }
@@ -39,6 +40,9 @@ export default function() {
 
 	return (
 		<section id="portfolio" className="container">
+			<div className="section-title">
+				<SectionTitle title="PORTFOLIO"/>
+			</div>
 			<PortfolioItems data={query}/>
 		</section>
 	)

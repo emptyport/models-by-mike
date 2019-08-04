@@ -24,7 +24,7 @@ export default function() {
 					            childImageSharp {
 									fluid(maxWidth: 1920) {
 					                  srcSet
-					                  ...GatsbyImageSharpFluid
+					                  ...GatsbyImageSharpFluid_noBase64
 					                }
 					              	id
 					            }
