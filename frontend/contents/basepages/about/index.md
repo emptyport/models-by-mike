@@ -4,4 +4,4 @@ template: basepage
 image: ./profile.png
 ---
 
-This is my about page. I'm a biochemist. I make Snapchat lenses. Thank you for reading.
+Welcome to my website! I'm a biochemist by day and Official Lens Creator by night. I love making Snapchat lenses and working on my 3D graphics skills.

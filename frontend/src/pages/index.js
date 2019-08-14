@@ -114,5 +114,5 @@ export const query = graphql`
 					icon
 				}
       		}
-    	}
-  	}`
+		}
+	  }`
