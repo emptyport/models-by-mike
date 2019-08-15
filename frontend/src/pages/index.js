@@ -81,7 +81,6 @@ class IndexPage extends React.Component{
 								<text fill="url(#wallPattern)" textAnchor="middle" x="50" y="50">{this.props.data.site.siteMetadata.capitalizeTitleOnHome ? this.props.data.site.siteMetadata.title.toUpperCase() : this.props.data.site.siteMetadata.title}</text>
 							</svg>
 						</div>
-						<img width="200" src="/images/OLC_badge.png" alt="Official Lens Creator on Snapchat badge"></img>
 						<p className="tag-line text-secondary">{this.props.data.site.siteMetadata.introTag}</p>
 						<p className="caption text-tertiary">{this.props.data.site.siteMetadata.description}</p>
 						<a href="#portfolio" className="btn">SEE WORKS</a>

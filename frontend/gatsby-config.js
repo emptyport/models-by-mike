@@ -4,7 +4,7 @@ let siteMetadata = {
 	logo: `/images/logo.png`,
 	icon: `/images/favicon.png`,
 	titleImage: `/images/wall.jpg`,
-	introTag: `CREATOR`,
+	introTag: `OFFICIAL LENS CREATOR`,
 	description: `I create Snapchat lenses and bizarre artwork and videos.`,
 	author: `@modelsbymike3d`,
 	blogItemsPerPage: 10,
