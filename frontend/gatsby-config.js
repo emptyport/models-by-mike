@@ -19,10 +19,6 @@ let siteMetadata = {
 			url: "/about"
 		},
 		{
-			name: "SUPPORT",
-			url: "/support"
-		},
-		{
 			name: "BLOG",
 			url: "/blog"
 		},
@@ -33,6 +29,14 @@ let siteMetadata = {
 		{
 			name: "CONTACT",
 			url: "/contact"
+		},
+		{
+			name: "SUPPORT",
+			url: "/support"
+		},
+		{
+			name: "MERCH",
+			url: "https://teespring.com/stores/models-by-mike"
 		}
 	],
 	footerLinks: [
@@ -69,6 +73,11 @@ let siteMetadata = {
 			name: "Snapchat",
 			icon: "/images/Snapchat.svg",
 			url: "https://lensstudio.snapchat.com/creator/Jn6NTlPetl3Iqtkd8MTNXQ"
+		},
+		{
+			name: "Giphy",
+			icon: "/images/Giphy.svg",
+			url: "https://giphy.com/channel/modelsbymike3d"
 		},
 		{
 			name: "Patreon",
