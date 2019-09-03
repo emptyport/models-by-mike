@@ -1,5 +1,5 @@
 let siteMetadata = {
-	title: `models by Mike`,
+	title: `Models by Mike`,
 	capitalizeTitleOnHome: true,
 	logo: `/images/logo.png`,
 	icon: `/images/favicon.png`,
