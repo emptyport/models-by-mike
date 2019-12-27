@@ -1,11 +1,11 @@
 let siteMetadata = {
-	title: `models by Mike`,
+	title: `Models by Mike`,
 	capitalizeTitleOnHome: true,
 	logo: `/images/logo.png`,
 	icon: `/images/favicon.png`,
 	titleImage: `/images/wall.jpg`,
 	introTag: `OFFICIAL LENS CREATOR`,
-	description: `I create Snapchat lenses and bizarre artwork and videos.`,
+	description: `I create augmented reality effects on Snapchat and Instagram`,
 	author: `@modelsbymike3d`,
 	blogItemsPerPage: 10,
 	portfolioItemsPerPage: 10,
@@ -33,10 +33,6 @@ let siteMetadata = {
 		{
 			name: "SUPPORT",
 			url: "/support"
-		},
-		{
-			name: "MERCH",
-			url: "https://teespring.com/stores/models-by-mike"
 		}
 	],
 	footerLinks: [
