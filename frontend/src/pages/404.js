@@ -1,18 +1,25 @@
-import React from "react"
-import SectionTitle from "../components/sectiontitle"
-import Layout from "../components/layout"
-import SEO from "../components/seo"
+import React from "react";
 
-const NotFoundPage = () => (
-  <Layout>
-    <SEO title="404: Not found" />
-		<section id="404" className="container" style={{ minHeight: "600px"}}>
-			<div className="section-title">
-				<SectionTitle title="404"/>
-				<p class="text-primary">The page you are looking for doesn't exist, or has been removed.</p>
-			</div>
-		</section>
-  </Layout>
-)
+import Layout from "../components/layout";
+import SEO from "../components/seo";
+import abductionIllustration from "../images/abduction-illustration.svg";
 
-export default NotFoundPage
+function NotFoundPage() {
+  return (
+    <Layout>
+      <SEO title="404: Not found" />
+      <div>
+        <img
+          alt="Ghost getting abducted by aliens"
+          className="block mx-auto w-1/2"
+          src={abductionIllustration}
+        />
+        <h2 className="bg-yellow-400 text-2xl font-bold inline-block my-8 p-3">
+          Looks like this page is a ghost that got abducted by aliens...
+        </h2>
+      </div>
+    </Layout>
+  );
+}
+
+export default NotFoundPage;
