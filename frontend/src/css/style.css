@@ -1,0 +1,35 @@
+/* purgecss start ignore */
+@tailwind base;
+@tailwind components;
+/* purgecss end ignore */
+@tailwind utilities;
+
+/* purgecss start ignore */
+html {
+  background-color: #2d3748;
+  font-family: "Nunito", sans-serif;
+}
+
+.grecaptcha-badge {
+  visibility: hidden;
+}
+
+.neu-border {
+  box-shadow: 2px 2px 5px #272c32, -2px -2px 5px #818b96c0,
+    inset -2px -2px 5px #818b9680, inset 2px 2px 5px #272c32;
+}
+
+.neu-inset {
+  box-shadow: inset 2px 2px 5px #272c32, inset -2px -2px 7px #818b9698;
+}
+
+.neu-border-button {
+  box-shadow: 1px 1px 5px #272c32, -1px -1px 5px #818b96c0,
+    inset -1px -1px 2px #3f485280, inset 1px 1px 2px #272c32;
+}
+
+.neu-border-button:active {
+  box-shadow: inset -3px -3px 5px #818b9680, inset 3px 3px 5px #272c32;
+}
+
+/* purgecss end ignore */
