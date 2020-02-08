@@ -87,7 +87,7 @@ class ContactPage extends React.Component {
             </label>
 
             <input
-              className="w-full mb-6 form-input neu-inset bg-mbmDark border-0  rounded-lg border-b-2  border-mbmYellow"
+              className="w-full mb-6 form-input neu-inset bg-gray-800 border-0  rounded-lg border-b-2  border-mbmYellow"
               id="first-name"
               placeholder="Phillip"
               type="text"
@@ -102,7 +102,7 @@ class ContactPage extends React.Component {
             </label>
 
             <input
-              className="w-full mb-6 form-input neu-inset bg-mbmDark border-0 rounded-lg  border-b-2 border-mbmYellow"
+              className="w-full mb-6 form-input neu-inset bg-gray-800 border-0 rounded-lg  border-b-2 border-mbmYellow"
               id="last-name"
               placeholder="Fry"
               type="text"
@@ -117,7 +117,7 @@ class ContactPage extends React.Component {
             </label>
 
             <input
-              className="w-full mb-6 form-input neu-inset bg-mbmDark border-0 rounded-lg border-b-2 border-mbmYellow"
+              className="w-full mb-6 form-input neu-inset bg-gray-800 border-0 rounded-lg border-b-2 border-mbmYellow"
               id="email"
               placeholder="person@email.com"
               type="text"
@@ -132,7 +132,7 @@ class ContactPage extends React.Component {
             </label>
 
             <textarea
-              className="w-full mb-6 form-textarea neu-inset bg-mbmDark border-0 rounded-lg border-b-2 border-mbmYellow"
+              className="w-full mb-6 form-textarea neu-inset bg-gray-800 border-0 rounded-lg border-b-2 border-mbmYellow"
               id="message"
               placeholder="Say something..."
               rows="8"
