@@ -70,7 +70,9 @@ function SEO({ description, lang, meta, title }) {
       title={title}
       titleTemplate={`%s | ${site.siteMetadata.title}`}
     >
-      <script src="https://www.google.com/recaptcha/api.js?render=6Le0KdYUAAAAAPa6AeAPcpt05EbQOOKzLiFRBAMJ"></script>
+      <script
+        src={`https://www.google.com/recaptcha/api.js?render=${process.env.RECAPTCHA_KEY}`}
+      ></script>
       <link
         href="https://fonts.googleapis.com/css?family=Nunito&display=swap"
         rel="stylesheet"
