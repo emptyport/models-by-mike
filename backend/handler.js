@@ -62,6 +62,9 @@ module.exports.mailer = (event, context, callback) => {
   logger.info(`${data.token}`);
 
   const res = {
+    headers: {
+      "Access-Control-Allow-Origin": "*"
+    },
     statusCode: 400,
     body: JSON.stringify({ status: "failed" })
   };
@@ -87,6 +90,9 @@ module.exports.mailer = (event, context, callback) => {
 
     sendEmail(data, err => {
       const res = {
+        headers: {
+          "Access-Control-Allow-Origin": "*"
+        },
         statusCode: 200,
         body: JSON.stringify({ status: "success" })
       };
