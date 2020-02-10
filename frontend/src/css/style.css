@@ -10,10 +10,6 @@ html {
   font-family: "Nunito", sans-serif;
 }
 
-.grecaptcha-badge {
-  visibility: hidden;
-}
-
 .neu-border {
   box-shadow: 4px 4px 5px #272c32, -2px -2px 5px #818b96c0,
     inset -2px -2px 5px #818b9680, inset 2px 2px 5px #272c32;

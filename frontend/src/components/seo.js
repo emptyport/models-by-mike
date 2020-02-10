@@ -71,7 +71,14 @@ function SEO({ description, lang, meta, title }) {
       titleTemplate={`%s | ${site.siteMetadata.title}`}
     >
       <script src="https://www.google.com/recaptcha/api.js?render=6Le0KdYUAAAAAPa6AeAPcpt05EbQOOKzLiFRBAMJ"></script>
-      <link href="https://fonts.googleapis.com/css?family=Nunito&display=swap" rel="stylesheet"></link>
+      <link
+        href="https://fonts.googleapis.com/css?family=Nunito&display=swap"
+        rel="stylesheet"
+      ></link>
+      <style>
+        {`.grecaptcha-badge {
+  visibility: hidden;}`}
+      </style>
     </Helmet>
   );
 }

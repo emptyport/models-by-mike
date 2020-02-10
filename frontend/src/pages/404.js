@@ -8,9 +8,11 @@ function NotFoundPage() {
     <Layout>
       <SEO title="404: Not found" />
       <div>
-        <h2 className="bg-yellow-400 text-2xl font-bold inline-block my-8 p-3">
-          Looks like this page is a ghost that got abducted by aliens...
-        </h2>
+        <h1 className="text-2xl mb-4">Not Found</h1>
+
+        <a href="/">
+          <img src="https://media.giphy.com/media/Phg5BqsiMHDJQeNURr/giphy.gif" />
+        </a>
       </div>
     </Layout>
   );

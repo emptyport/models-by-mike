@@ -3,7 +3,7 @@ module.exports = {
   theme: {
     extend: {
       fontSize: {
-        tiny: "12px"
+        tiny: "10px"
       },
       colors: {
         mbmPurple: "#660099",

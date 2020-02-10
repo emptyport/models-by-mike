@@ -74,6 +74,8 @@ class ContactPage extends React.Component {
       <Layout>
         <SEO title="Contact" />
         <section>
+          <h1 className="text-2xl mb-4">Contact Me</h1>
+
           <form
             id="contactForm"
             onSubmit={this.handleSubmit}
@@ -151,6 +153,28 @@ class ContactPage extends React.Component {
                 />
               </div>
             </button>
+
+            <p className="mt-0 mb-6 text-xs italic">
+              This site is protected by reCAPTCHA and the Google{" "}
+              <a
+                className="underline"
+                target="_blank"
+                rel="noopener noreferrer"
+                href="https://policies.google.com/privacy"
+              >
+                Privacy Policy
+              </a>{" "}
+              and{" "}
+              <a
+                className="underline"
+                target="_blank"
+                rel="noopener noreferrer"
+                href="https://policies.google.com/terms"
+              >
+                Terms of Service
+              </a>{" "}
+              apply.
+            </p>
           </form>
         </section>
       </Layout>

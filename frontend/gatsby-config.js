@@ -8,14 +8,15 @@ module.exports = {
   plugins: [
     "gatsby-plugin-eslint",
     `gatsby-plugin-react-helmet`,
+    `gatsby-plugin-offline`,
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
         name: `Models By Mike`,
-        short_name: `Models By Mike`,
+        short_name: `Mike`,
         start_url: `/`,
-        background_color: `#ffffff`,
-        theme_color: `#4dc0b5`,
+        background_color: `#2d3748`,
+        theme_color: `#2d3748`,
         display: `standalone`,
         icon: `src/images/favicon.png`
       }
@@ -46,6 +47,13 @@ module.exports = {
         respectDNT: true
       }
     },
-    `gatsby-plugin-offline`
+    {
+      resolve: "gatsby-plugin-react-svg",
+      options: {
+        rule: {
+          include: /icons/
+        }
+      }
+    }
   ]
 };
