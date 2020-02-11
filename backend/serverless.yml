@@ -32,6 +32,9 @@ provider:
     - Effect: "Allow"
       Action:
         - "ses:SendEmail"
+        - logs:CreateLogGroup
+        - logs:CreateLogStream
+        - logs:PutLogEvents
       Resource: ["*"]
   environment:
     EMAIL: ${file(./config.${self:provider.stage}.json):email}
@@ -72,6 +75,7 @@ provider:
 functions:
   hello:
     handler: handler.mailer
+    memorySize: 128
     events:
       - http:
           path: email
