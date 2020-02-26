@@ -1,0 +1,12 @@
+[
+  {
+    "name": "Item 1",
+    "slug": "item-1",
+    "description": "This is a really cool item"
+  },
+  {
+    "name": "Item 2",
+    "slug": "item-2",
+    "description": "This is another really cool item"
+  }
+]
