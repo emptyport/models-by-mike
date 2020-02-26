@@ -31,7 +31,7 @@ const sendEmail = (data, done) => {
   const body = `${data.firstName} ${data.lastName} - ${data.email} \n\n ${data.message}`;
 
   const params = {
-    Source: process.env.EMAIL,
+    Source: process.env.FROM,
     ReplyToAddresses: [data.email],
     Destination: {
       ToAddresses: [process.env.EMAIL]
