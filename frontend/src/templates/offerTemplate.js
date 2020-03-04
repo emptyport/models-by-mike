@@ -8,6 +8,7 @@ const Page = props => {
       <div>
         <h1>{props.pageContext.name}</h1>
         <p>{props.pageContext.description}</p>
+        <p>{props.pageContext.basePrice}</p>
       </div>
     </Layout>
   );

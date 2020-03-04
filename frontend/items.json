@@ -2,11 +2,17 @@
   {
     "name": "Item 1",
     "slug": "item-1",
-    "description": "This is a really cool item"
+    "description": "This is a really cool item",
+    "platforms": ["Snapchat", "Instagram", "Facebook/Messenger"],
+    "basePrice": 50,
+    "extraPlatformCost": 10
   },
   {
     "name": "Item 2",
     "slug": "item-2",
-    "description": "This is another really cool item"
+    "description": "This is another really cool item",
+    "platforms": ["Snapchat", "Instagram", "Facebook/Messenger"],
+    "basePrice": 50,
+    "extraPlatformCost": 10
   }
 ]
