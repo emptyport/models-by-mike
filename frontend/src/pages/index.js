@@ -8,7 +8,7 @@ import Snapchat from "../images/icons/snapchat.svg";
 import Instagram from "../images/icons/instagram.svg";
 import Facebook from "../images/icons/facebook.svg";
 import Twitter from "../images/icons/twitter.svg";
-import Youtube from "../images/icons/youtube.svg";
+import LinkedIn from "../images/icons/linkedin.svg";
 
 function TwerkingAlien() {
   return (
@@ -91,9 +91,9 @@ function IndexPage() {
             <a
               target="_blank"
               rel="noopener noreferrer"
-              href="https://www.youtube.com/channel/UCpLVNOoqAc3cnd_QgSxoAvg"
+              href="https://www.linkedin.com/company/modelsbymike"
             >
-              <Youtube className="p-2 w-12 fill-current" />
+              <LinkedIn className="p-2 w-12 fill-current" />
             </a>
           </div>
         </div>
