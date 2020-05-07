@@ -61,10 +61,13 @@ class ContactPage extends React.Component {
     }
 
     getRecaptchaToken(done) {
+        const key =
+            process.env.RECAPTCHA_KEY ||
+            "6Lc1hNYUAAAAANS0mVhv0PGuwZgaSyj7y10TnYus";
         window.grecaptcha.ready(function() {
             try {
                 window.grecaptcha
-                    .execute(process.env.RECAPTCHA_KEY, {
+                    .execute(key, {
                         action: "contactForm",
                     })
                     .then(function(token) {
