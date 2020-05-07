@@ -1,88 +1,101 @@
-import React from "react"
-import PropTypes from "prop-types"
-import Helmet from "react-helmet"
-import { useStaticQuery, graphql } from "gatsby"
+import { useStaticQuery, graphql } from "gatsby";
+import PropTypes from "prop-types";
+import React from "react";
+import Helmet from "react-helmet";
 
-function SEO({ description, lang, meta, title, image }) {
-  const { site } = useStaticQuery(
-    graphql`
-      query {
-        site {
-          siteMetadata {
-            title
-            description
-            author
-			logo
-          }
+function SEO({ description, lang, meta, title }) {
+  const { site } = useStaticQuery(graphql`
+    query DefaultSEOQuery {
+      site {
+        siteMetadata {
+          title
+          description
+          author
+          keywords
         }
       }
-    `
-  )
+    }
+  `);
 
-  const metaDescription = description || site.siteMetadata.description
-  const ogImage = image || site.siteMetadata.logo
-
+  const metaDescription = description || site.siteMetadata.description;
 
   return (
     <Helmet
       htmlAttributes={{
-        lang,
+        lang
       }}
-      title={title}
-      titleTemplate={ title === site.siteMetadata.title ? title : `%s | ${site.siteMetadata.title}`}
       meta={[
         {
           name: `description`,
-          content: metaDescription,
+          content: metaDescription
         },
         {
           property: `og:title`,
-          content: title,
+          content: title
         },
         {
           property: `og:description`,
-          content: metaDescription,
+          content: metaDescription
         },
         {
           property: `og:type`,
-          content: `website`,
+          content: `website`
         },
         {
           name: `twitter:card`,
-          content: `summary`,
+          content: `summary`
         },
         {
           name: `twitter:creator`,
-          content: site.siteMetadata.author,
+          content: site.siteMetadata.author
         },
         {
           name: `twitter:title`,
-          content: title,
+          content: title
         },
         {
           name: `twitter:description`,
-          content: metaDescription,
-        },
-		{
-			name: `og:image`,
-			content: ogImage
-		}
-      ].concat(meta)}
-    />
-  )
+          content: metaDescription
+        }
+      ]
+        .concat(
+          site.siteMetadata.keywords.length > 0
+            ? {
+                name: `keywords`,
+                content: site.siteMetadata.keywords.join(`, `)
+              }
+            : []
+        )
+        .concat(meta)}
+      title={title}
+      titleTemplate={`%s | ${site.siteMetadata.title}`}
+    >
+      <script
+        src={`https://www.google.com/recaptcha/api.js?render=${process.env.RECAPTCHA_KEY}`}
+      ></script>
+      <link
+        href="https://fonts.googleapis.com/css?family=Nunito&display=swap"
+        rel="stylesheet"
+      ></link>
+      <style>
+        {`.grecaptcha-badge {
+  visibility: hidden;}`}
+      </style>
+    </Helmet>
+  );
 }
 
 SEO.defaultProps = {
   lang: `en`,
-  meta: [],
-  description: ``,
-}
+  meta: []
+};
 
 SEO.propTypes = {
   description: PropTypes.string,
+  keywords: PropTypes.arrayOf(PropTypes.string),
   lang: PropTypes.string,
-  meta: PropTypes.arrayOf(PropTypes.object),
-  title: PropTypes.string.isRequired,
-}
+  meta: PropTypes.array,
+  title: PropTypes.string.isRequired
+};
 
-export default SEO
+export default SEO;

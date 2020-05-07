@@ -1,171 +1,108 @@
-# Gatsby Starter Elemental
+# Gatsby Starter Tailwind
 
-![](https://img.shields.io/badge/version-1.0.0-green.svg) ![](https://img.shields.io/badge/License-MIT-orange.svg)
+[![All Contributors](https://img.shields.io/badge/all_contributors-7-orange.svg?style=flat-square)](#contributors)
 
+<div align="center">
+  <img src="https://image.ibb.co/cJjPN7/gatsby_tailwind.png" alt="Gatsby and Tailwind CSS logos">
+</div>
 
-Elemental is a portfolio template suitable for artists, photographers, designers etc. With the starter you can create blog posts, portfolio posts an miscellaneous posts (such as privacy-policy).
+<div align="center">
+  <strong>A <a href="https://www.gatsbyjs.org/">Gatsby</a> starter styled using <a href="https://tailwindcss.com/">Tailwind CSS</a>, a utility-first CSS framework.</strong><br />
+  Uses <a href="https://www.purgecss.com/">PurgeCSS</a> to remove unused CSS.<br />
+  Illustrations by <a href="https://undraw.co/">unDraw</a>.
+  <br />
+  <br />
+</div>
+  
+![alt text](https://image.ibb.co/jv6FC7/gatsby_starter_tailwind.png "Screenshot of Gatsby Starter Tailwind homepage")
+  
+<p align="center">View demo <a href="https://gatsby-starter-tailwind.oddstronaut.com/">here</a>.</p>
 
-**[Live Demo](https://elemental.netlify.com)**
+## What is Tailwind CSS?
 
-## Getting Started.
+> "Tailwind CSS is a utility-first CSS framework for rapidly building custom user interfaces."
+> –[Tailwind CSS](https://tailwindcss.com)
 
-You will need node and [Gatsby](https://www.gatsbyjs.org/tutorial/part-zero/) installed.
+## What is Gatsby?
 
-Start the project by 
+> "Gatsby is a free and open source framework based on React that helps developers build blazing fast websites and apps." -[Gatsby](https://www.gatsbyjs.org/)
 
-```
-gatsby new project-name https://github.com/akzhy/gatsby-starter-elemental
-cd project-name
-gatsby develop
-```
+## Get started
 
-And for the final build
+Install the Gatsby CLI:
 
-```
-gatsby build
-```
-
-### Configuring
-
-Almost all features of this starter are editable. In order to personalize, open the `gatsby-config.js` file and start editing the below part.
-
-```javascript
-// Do not remove any of the properties below.
-
-let siteMetadata = {
-    title: `Elemental`, // Title of your webpage
-    capitalizeTitleOnHome: true, // Whether to capitalize the letter on homepage
-    logo: `/images/logo.png`, // Logo 
-    icon: `/images/icon.png`, // Favicon, shown in the browsers "tab"
-    titleImage: `/images/wall.jpg`, // The main title is filled with an image.
-    introTag: `PHOTOGRAPHER | VIDEOGRAPHER`, // Intro tag shown below title
-    description: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit amet accumsan arcu. Proin ac consequat arcu.`,
-    author: `@_akzhy`,
-    blogItemsPerPage: 10,
-    portfolioItemsPerPage: 10,
-    darkmode: true, // Whether to enable the darkmode. Change to false if you want the light mode
-    // The links shown on the navbar and footer, follow the same structure to add or remove more items.
-    navLinks: [{
-            name: "HOME",
-            url: "/"
-        },
-        {
-            name: "ABOUT",
-            url: "/about"
-        },
-        {
-            name: "BLOG",
-            url: "/blog"
-        },
-        {
-            name: "PORTFOLIO",
-            url: "/portfolio"
-        },
-        {
-            name: "CONTACT",
-            url: "/contact"
-        }
-    ],
-    // Same as navbar links, except these are shown on the footer
-    footerLinks: [{
-        name: "PRIVACY POLICY",
-        url: "/privacy-policy"
-    }],
-    // Your social profile links. The icons of the given social medias are available in the static folder. If you are adding a new item, include the icon in the static/images folder.
-    social: [{
-            name: "Facebook",
-            icon: "/images/Facebook.svg",
-            url: "#"
-        },
-        {
-            name: "Twitter",
-            icon: "/images/Twitter.svg",
-            url: "#"
-        },
-        {
-            name: "Instagram",
-            icon: "/images/Instagram.svg",
-            url: "#"
-        },
-        {
-            name: "Youtube",
-            icon: "/images/Youtube.svg",
-            url: "#"
-        }
-    ],
-    contact: {
-        /* Leave this completely empty (no space either) if you don't want a contact form. */
-        api_url: "./test.json",
-        description: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit amet accumsan arcu. Proin ac consequat arcu.`,
-        mail: "hi@akzhy.com",
-        phone: "000-000-0000",
-        address: "1234 \nLocation \nLocation"
-    }
-}
-
+```sh
+npm i --global gatsby-cli
 ```
 
-#### Creating new blog posts.
+Create a new Gatsby project using this starter:
 
-Open the `contents/blog` folder and create a new folder with the name you wish to see as the URL. Inside the folder create an `index.md` file and also include any files you wish to add.
-
-The frontmatter should be of the below structure
-
-```
----
-title: Title of your post
-date: 2019-06-29 <-- Date should be in the given format
-template: blog <-- The template you wish to use. "blog" for blog posts
-image: ./image.jpg <-- Image shown on the list pages and also used as open graph image
-banner: ./banner.jpg <-- Banner shown in the blog post
-description: The description shown in the listing page. Also used for SEO description. 
----
+```sh
+gatsby new my-new-website https://github.com/taylorbryant/gatsby-starter-tailwind
 ```
 
-If you don't want the blog section, simply delete everything inside the `contents/blog` folder. (Do not delete the folder itself)
+Build a stylesheet from your Tailwind CSS config and run the project in development mode:
 
-#### Creating new portfolio posts.
-
-Open the `contents/portfolio` folder and create a new folder with the name you wish to see as the URL. Inside the folder create an `index.md` file and also include any files you wish to add.
-
-The frontmatter should be of the below structure
-
-```
----
-title: Title of your post
-date: 2019-06-29 <-- Date should be in the given format
-template: blog <-- The template you wish to use. "blog" for blog posts
-image: ./image.jpg <-- Image shown on the list pages and also used as open graph image
-description: The description shown in the listing page. Also used for SEO description. 
----
+```sh
+cd my-new-website
+npm run develop
 ```
 
-Portfolio pages support the creation of grids.
+## Format and lint
 
-To create a grid, follow the below structure
+- `npm run analyze` - See what ESLint and Prettier can fix
+- `npm run fix` - Run Prettier and ESLint with the `--fix` option
 
-```
-[row]
-  [col]
-    **Markdown**
-  [/col]
-[/row]
-```
+## Build your site
 
-The columns will have equal width on wide screens, and will expand on smaller screens.
+Use `npm run build` to build your site for production.
 
-#### Creating miscellaneous posts
+## Deployment
 
-These posts follow the URL structure of `http://example.com/miscellaneous-post/`. They are useful for creating pages like `privacy-policy`
+### Netlify
 
-The "About" page is created as a miscellaneous post.
+#### 1. Deploy this repo
+[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/taylorbryant/gatsby-starter-tailwind)
 
+#### 2. Update the build settings
+![alt text](https://i.ibb.co/whvDmxY/Screenshot-2020-01-26-11-06-15.png "Example Netlify build settings")
 
-## Contributing
+## Resources
 
-Any kind of contributions are welcome. Bump the version and create a PR.
+- [Gatsby documentation](https://www.gatsbyjs.org/docs/)
+- [Tailwind documentation](https://tailwindcss.com/docs/what-is-tailwind/)
+- [Prettier documentation](https://prettier.io/docs/en/index.html)
+- [ESLint documentation](https://eslint.org/docs/user-guide/configuring)
 
+## License
 
+[MIT](https://github.com/taylorbryant/gatsby-starter-tailwind/blob/master/LICENSE.md)
 
+## How you can help
 
+Enjoying Gatsby Starter Tailwind and want to help? You can:
 
+- [Create an issue](https://github.com/taylorbryant/gatsby-starter-tailwind/issues/new) with some constructive criticism
+- [Submit a pull request](https://github.com/taylorbryant/gatsby-starter-tailwind/compare) with some improvements to the project
+
+## Contributors
+
+Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/docs/en/emoji-key)):
+
+<!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
+<!-- prettier-ignore -->
+<table>
+  <tr>
+    <td align="center"><a href="http://impuls.dev"><img src="https://avatars3.githubusercontent.com/u/8146736?v=4" width="100px;" alt="impulse"/><br /><sub><b>impulse</b></sub></a><br /><a href="https://github.com/taylorbryant/gatsby-starter-tailwind/commits?author=impulse" title="Code">💻</a></td>
+    <td align="center"><a href="https://gandreadis.com"><img src="https://avatars3.githubusercontent.com/u/5272244?v=4" width="100px;" alt="Georgios Andreadis"/><br /><sub><b>Georgios Andreadis</b></sub></a><br /><a href="https://github.com/taylorbryant/gatsby-starter-tailwind/commits?author=gandreadis" title="Code">💻</a></td>
+    <td align="center"><a href="https://github.com/altruisticsoftware"><img src="https://avatars3.githubusercontent.com/u/12105346?v=4" width="100px;" alt="Chris"/><br /><sub><b>Chris</b></sub></a><br /><a href="https://github.com/taylorbryant/gatsby-starter-tailwind/commits?author=altruisticsoftware" title="Code">💻</a></td>
+    <td align="center"><a href="https://github.com/dalwadani"><img src="https://avatars1.githubusercontent.com/u/4618082?v=4" width="100px;" alt="Dhaifallah Alwadani"/><br /><sub><b>Dhaifallah Alwadani</b></sub></a><br /><a href="https://github.com/taylorbryant/gatsby-starter-tailwind/commits?author=dalwadani" title="Code">💻</a></td>
+    <td align="center"><a href="http://nigelball.org"><img src="https://avatars2.githubusercontent.com/u/815408?v=4" width="100px;" alt="Nigel Ball"/><br /><sub><b>Nigel Ball</b></sub></a><br /><a href="#ideas-nigelb135" title="Ideas, Planning, & Feedback">🤔</a> <a href="https://github.com/taylorbryant/gatsby-starter-tailwind/commits?author=nigelb135" title="Code">💻</a></td>
+    <td align="center"><a href="https://github.com/monte-hayward"><img src="https://avatars3.githubusercontent.com/u/3780422?v=4" width="100px;" alt="Monte Hayward"/><br /><sub><b>Monte Hayward</b></sub></a><br /><a href="https://github.com/taylorbryant/gatsby-starter-tailwind/commits?author=monte-hayward" title="Code">💻</a></td>
+    <td align="center"><a href="https://lukebennett.com.au"><img src="https://avatars0.githubusercontent.com/u/3422401?v=4" width="100px;" alt="Luke Bennett"/><br /><sub><b>Luke Bennett</b></sub></a><br /><a href="https://github.com/taylorbryant/gatsby-starter-tailwind/commits?author=lukebennett88" title="Code">💻</a></td>
+  </tr>
+</table>
+
+<!-- ALL-CONTRIBUTORS-LIST:END -->
+
+This project follows the [all-contributors](https://github.com/all-contributors/all-contributors) specification. Contributions of any kind welcome!

@@ -1,18 +1,21 @@
-import React from "react"
-import SectionTitle from "../components/sectiontitle"
-import Layout from "../components/layout"
-import SEO from "../components/seo"
+import React from "react";
 
-const NotFoundPage = () => (
-  <Layout>
-    <SEO title="404: Not found" />
-		<section id="404" className="container" style={{ minHeight: "600px"}}>
-			<div className="section-title">
-				<SectionTitle title="404"/>
-				<p class="text-primary">The page you are looking for doesn't exist, or has been removed.</p>
-			</div>
-		</section>
-  </Layout>
-)
+import Layout from "../components/layout";
+import SEO from "../components/seo";
 
-export default NotFoundPage
+function NotFoundPage() {
+  return (
+    <Layout>
+      <SEO title="404: Not found" />
+      <div>
+        <h1 className="text-2xl mb-4">Not Found</h1>
+
+        <a href="/">
+          <img src="https://media.giphy.com/media/Phg5BqsiMHDJQeNURr/giphy.gif" />
+        </a>
+      </div>
+    </Layout>
+  );
+}
+
+export default NotFoundPage;
