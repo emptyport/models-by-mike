@@ -1,18 +1,38 @@
-const path = require("path");
-const data = require("./items.json");
+const path = require(`path`);
 
-exports.createPages = ({ boundActionCreators }) => {
-  const { createPage } = boundActionCreators;
+exports.createPages = async ({ actions, graphql, reporter }) => {
+    const { createPage } = actions;
 
-  const template = path.resolve(`src/templates/offerTemplate.js`);
+    const blogPostTemplate = path.resolve(`src/templates/blogTemplate.js`);
 
-  data.forEach(item => {
-    const slug = item.slug;
+    const result = await graphql(`
+        {
+            allMarkdownRemark(
+                sort: { order: DESC, fields: [frontmatter___date] }
+                limit: 1000
+            ) {
+                edges {
+                    node {
+                        frontmatter {
+                            path
+                        }
+                    }
+                }
+            }
+        }
+    `);
 
-    createPage({
-      path: slug,
-      component: template,
-      context: item
+    // Handle errors
+    if (result.errors) {
+        reporter.panicOnBuild(`Error while running GraphQL query.`);
+        return;
+    }
+
+    result.data.allMarkdownRemark.edges.forEach(({ node }) => {
+        createPage({
+            path: node.frontmatter.path,
+            component: blogPostTemplate,
+            context: {}, // additional data can be passed via context
+        });
     });
-  });
 };
