@@ -19,6 +19,7 @@
         "body-parser": "^1.18.3",
         "cookie-parser": "^1.4.4",
         "express": "^4.16.4",
+        "gatsby-plugin-canonical-urls": "^2.3.1",
         "lunr": "^2.3.6",
         "nodemailer": "^6.1.0"
     },

@@ -10,13 +10,19 @@ module.exports = {
             `filter`,
             `effect`,
         ],
-        image: `/assets/gorilla_lisa.jpg`,
+        image: `/assets/background.jpg`,
     },
     plugins: [
         "gatsby-plugin-eslint",
         "gatsby-plugin-netlify-cms",
         `gatsby-plugin-react-helmet`,
         `gatsby-plugin-offline`,
+        {
+            resolve: `gatsby-plugin-canonical-urls`,
+            options: {
+                siteUrl: `https://modelsbymike3d.com`,
+            },
+        },
         {
             resolve: `gatsby-transformer-remark`,
             options: {
