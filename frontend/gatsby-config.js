@@ -11,8 +11,10 @@ module.exports = {
             `effect`,
         ],
         image: `/assets/background.jpg`,
+        siteUrl: `https://modelsbymike3d.com`,
     },
     plugins: [
+        `gatsby-plugin-sitemap`,
         "gatsby-plugin-eslint",
         "gatsby-plugin-netlify-cms",
         `gatsby-plugin-react-helmet`,
