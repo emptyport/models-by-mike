@@ -11,97 +11,82 @@ import Twitter from "../images/icons/twitter.svg";
 import LinkedIn from "../images/icons/linkedin.svg";
 
 function TwerkingAlien() {
-    return (
-        <img
-            alt="Twerking alien"
-            className="w-32 min-w-0 flex-shrink"
-            src="https://media.giphy.com/media/Q7pFIzANZnpA1PC5Zg/giphy.gif"
-        />
-    );
+  return (
+    <img
+      alt="Twerking alien"
+      className="w-32 min-w-0 flex-shrink"
+      src="https://media.giphy.com/media/Q7pFIzANZnpA1PC5Zg/giphy.gif"
+    />
+  );
 }
 
 function IndexPage() {
-    return (
-        <Layout>
-            <SEO title="Home" />
-            <section className="mb-8">
-                <div className=" rounded-lg w-10/12 mx-auto flex flex-row justify-center items-center">
-                    <TwerkingAlien />
-                    <img
-                        alt="Snapchat Official Lens Creator Badge"
-                        className="w-40 min-w-0"
-                        src={olcBadge}
-                    />
-                    <TwerkingAlien />
-                </div>
-            </section>
+  return (
+    <Layout>
+      <SEO title="Home" />
+      <section className="mb-8">
+        <div className=" rounded-lg w-10/12 mx-auto flex flex-row justify-center items-center">
+          <TwerkingAlien />
+          <img
+            alt="Snapchat Official Lens Creator Badge"
+            className="w-40 min-w-0"
+            src={olcBadge}
+          />
+          <TwerkingAlien />
+        </div>
+      </section>
 
-            <section className="mb-8">
-                <div className=" rounded-lg w-full mx-auto flex flex-col p-4 text-center text-xl">
-                    <p className="">
-                        Purveyor of the finest augmented reality effects on
-                    </p>
-                    <p className="text-mbmYellow font-black">Snapchat</p>
-                    <p className="text-pink-500 font-black">Instagram</p>
-                    <p className="text-blue-500 font-black">Facebook</p>
-                </div>
-            </section>
+      <section className="mb-8">
+        <div className=" rounded-lg w-full mx-auto flex flex-col p-4 text-center text-xl">
+          <p className="">
+            Purveyor of the finest augmented reality effects on
+          </p>
+          <p className="text-mbmYellow font-black">Snapchat</p>
+          <p className="text-pink-500 font-black">Instagram</p>
+          <p className="text-blue-500 font-black">Facebook</p>
+        </div>
+        <div className="w-full mx-auto p-4 text-center text-lg underline">
+          <a href="https://lensstudio.snapchat.com/creator/Jn6NTlPetl3Iqtkd8MTNXQ">
+            Check out my Snapchat filters here!
+          </a>
+        </div>
+      </section>
 
-            <section className="mb-8">
-                <div className=" rounded-lg w-full mx-auto flex text-center text-xl justify-around items-center">
-                    <div className="neu-border-button rounded-full m-2">
-                        <a
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            href="https://www.snapchat.com/add/modelsbymike3d"
-                        >
-                            <Snapchat className="p-2 w-12 fill-current" />
-                        </a>
-                    </div>
+      <section className="mb-8">
+        <div className=" rounded-lg w-full mx-auto flex text-center text-xl justify-around items-center">
+          <div className="neu-border-button rounded-full m-2">
+            <a href="https://www.snapchat.com/add/modelsbymike3d">
+              <Snapchat className="p-2 w-12 fill-current" />
+            </a>
+          </div>
 
-                    <div className="neu-border-button rounded-full m-2">
-                        <a
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            href="https://www.instagram.com/modelsbymike3d/"
-                        >
-                            <Instagram className="p-2 w-12 fill-current" />
-                        </a>
-                    </div>
+          <div className="neu-border-button rounded-full m-2">
+            <a href="https://www.instagram.com/modelsbymike3d/">
+              <Instagram className="p-2 w-12 fill-current" />
+            </a>
+          </div>
 
-                    <div className="neu-border-button rounded-full m-2">
-                        <a
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            href="https://www.facebook.com/ModelsByMike3D"
-                        >
-                            <Facebook className="p-2 w-12 fill-current" />
-                        </a>
-                    </div>
+          <div className="neu-border-button rounded-full m-2">
+            <a href="https://www.facebook.com/ModelsByMike3D">
+              <Facebook className="p-2 w-12 fill-current" />
+            </a>
+          </div>
 
-                    <div className="neu-border-button rounded-full m-2">
-                        <a
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            href="https://twitter.com/modelsbymike3d"
-                        >
-                            <Twitter className="p-2 w-12 fill-current" />
-                        </a>
-                    </div>
+          <div className="neu-border-button rounded-full m-2">
+            <a href="https://twitter.com/modelsbymike3d">
+              <Twitter className="p-2 w-12 fill-current" />
+            </a>
+          </div>
 
-                    <div className="neu-border-button rounded-full m-2">
-                        <a
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            href="https://www.linkedin.com/company/modelsbymike"
-                        >
-                            <LinkedIn className="p-2 w-12 fill-current" />
-                        </a>
-                    </div>
-                </div>
-            </section>
-        </Layout>
-    );
+          <div className="neu-border-button rounded-full m-2">
+            <a href="https://www.linkedin.com/company/modelsbymike">
+              <LinkedIn className="p-2 w-12 fill-current" />
+            </a>
+          </div>
+        </div>
+      </section>
+    </Layout>
+  );
 }
 
 export default IndexPage;
