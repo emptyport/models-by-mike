@@ -6,8 +6,14 @@
 
 /* purgecss start ignore */
 html {
-  background-color: #2d3748;
-  font-family: "Nunito", sans-serif;
+  background-color: #1a202c;
+  font-family: "Nunito Sans", sans-serif;
+}
+
+.mbmHeader {
+  font-family: "Ubuntu", sans-serif;
+  font-weight: bold;
+  /*text-shadow: 1px 1px 0px #ffd23f;*/
 }
 
 .neu-border {

@@ -1,8 +1,11 @@
 import React from "react";
+import { Link } from "gatsby";
 
 import Layout from "../components/layout";
 import SEO from "../components/seo";
 import olcBadge from "../images/OLC_badge.png";
+
+import alienStill from "../images/home/alien_still_optimized.png";
 
 import Snapchat from "../images/icons/snapchat.svg";
 import Instagram from "../images/icons/instagram.svg";
@@ -24,6 +27,55 @@ function IndexPage() {
   return (
     <Layout>
       <SEO title="Home" />
+      <section className="mb-0">
+        <div className="flex flex-col md:flex-row content-center text-center">
+          <div className="self-center mbmHeader text-5xl">
+            Stand out from the crowd
+          </div>
+          <img src={alienStill} className="mx-auto" />
+        </div>
+      </section>
+
+      <section className="mb-8">
+        <div className="flex flex-col content-center text-center text-lg">
+          <div className="self-center mbmHeader text-4xl mb-4">
+            Create an experience
+          </div>
+          <p className="text-left mb-4">
+            Create an experience for your audience with augmented reality. Let
+            your users be part of the story by providing them with something
+            engaging and memorable.
+          </p>
+          <p className="text-left">
+            Level up your marketing campaign. Bring your book cover to life.
+            Dazzle with your business card. Tell a story.
+          </p>
+          <div className="mt-2 self-center mbmHeader text-xl">
+            The possibilities are endless.
+          </div>
+        </div>
+      </section>
+
+      <section className="mb-8">
+        <div className=" rounded-lg w-full mx-auto flex flex-col p-4 text-center text-lg">
+          <div className="self-center mbmHeader text-4xl mb-4">{`Let's talk`}</div>
+          <p className="">
+            I am recognized by Snapchat as an Official Lens Creator and I can
+            create AR effects for
+          </p>
+          <p className="text-mbmYellow font-black">Snapchat</p>
+          <p className="text-pink-500 font-black">Instagram</p>
+          <p className="text-blue-500 font-black">Facebook</p>
+          <p className="mt-4">Are you interested in an effect of your own?</p>
+          <p>
+            <Link
+              className="underline text-xl"
+              to="/contact?utm_source=home&utm_medium=website&utm_campaign=none"
+            >{`Get in touch.`}</Link>
+          </p>
+        </div>
+      </section>
+
       <section className="mb-8">
         <div className=" rounded-lg w-10/12 mx-auto flex flex-row justify-center items-center">
           <TwerkingAlien />
@@ -33,17 +85,6 @@ function IndexPage() {
             src={olcBadge}
           />
           <TwerkingAlien />
-        </div>
-      </section>
-
-      <section className="mb-8">
-        <div className=" rounded-lg w-full mx-auto flex flex-col p-4 text-center text-xl">
-          <p className="">
-            Purveyor of the finest augmented reality effects on
-          </p>
-          <p className="text-mbmYellow font-black">Snapchat</p>
-          <p className="text-pink-500 font-black">Instagram</p>
-          <p className="text-blue-500 font-black">Facebook</p>
         </div>
         <div className="w-full mx-auto p-4 text-center text-lg underline">
           <a href="https://lensstudio.snapchat.com/creator/Jn6NTlPetl3Iqtkd8MTNXQ">
