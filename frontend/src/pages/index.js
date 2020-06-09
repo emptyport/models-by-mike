@@ -13,16 +13,6 @@ import Facebook from "../images/icons/facebook.svg";
 import Twitter from "../images/icons/twitter.svg";
 import LinkedIn from "../images/icons/linkedin.svg";
 
-function TwerkingAlien() {
-  return (
-    <img
-      alt="Twerking alien"
-      className="w-32 min-w-0 flex-shrink"
-      src="https://media.giphy.com/media/Q7pFIzANZnpA1PC5Zg/giphy.gif"
-    />
-  );
-}
-
 function IndexPage() {
   return (
     <Layout>
@@ -32,7 +22,11 @@ function IndexPage() {
           <div className="self-center mbmHeader text-5xl">
             Stand out from the crowd
           </div>
-          <img src={alienStill} className="mx-auto" />
+          <img
+            src={alienStill}
+            alt="Image of the twerking alien effect being used on a smartphone"
+            className="mx-auto"
+          />
         </div>
       </section>
 
@@ -56,7 +50,7 @@ function IndexPage() {
         </div>
       </section>
 
-      <section className="mb-8">
+      <section className="mb-4">
         <div className=" rounded-lg w-full mx-auto flex flex-col p-4 text-center text-lg">
           <div className="self-center mbmHeader text-4xl mb-4">{`Let's talk`}</div>
           <p className="">
@@ -78,13 +72,11 @@ function IndexPage() {
 
       <section className="mb-8">
         <div className=" rounded-lg w-10/12 mx-auto flex flex-row justify-center items-center">
-          <TwerkingAlien />
           <img
             alt="Snapchat Official Lens Creator Badge"
             className="w-40 min-w-0"
             src={olcBadge}
           />
-          <TwerkingAlien />
         </div>
         <div className="w-full mx-auto p-4 text-center text-lg underline">
           <a href="https://lensstudio.snapchat.com/creator/Jn6NTlPetl3Iqtkd8MTNXQ">
