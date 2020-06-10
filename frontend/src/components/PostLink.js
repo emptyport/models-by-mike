@@ -6,7 +6,7 @@ const PostLink = ({ post }) => (
         <div
             className="w-full h-48 rounded mb-4"
             style={{
-                backgroundImage: `url(../assets/${post.frontmatter.image})`,
+                backgroundImage: `url(../${post.frontmatter.image})`,
                 backgroundPosition: "center",
                 backgroundRepeat: "no-repeat",
                 backgroundSize: "cover",

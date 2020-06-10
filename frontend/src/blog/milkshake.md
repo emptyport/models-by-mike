@@ -2,7 +2,7 @@
 path: "/blog/milkshake-lens"
 date: "2019-08-15"
 title: "Milkshake Breakdown"
-image: "milkshake.jpg"
+image: "assets/milkshake.jpg"
 ---
 
 The milkshake lens was made on a whim late one night. [Thanks to this commercial](https://www.youtube.com/watch?v=JIxvOhircTg), the song "Milkshake" by Kelis was (and probably still is to this day) stuck in my head.

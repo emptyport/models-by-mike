@@ -2,7 +2,7 @@
 path: "/blog/welcome"
 date: "2019-07-11"
 title: "Welcome"
-image: "gorilla_lisa.jpg"
+image: "assets/gorilla_lisa.jpg"
 ---
 
 I finished my website redesign! Originally I was focusing on making 3D models for Facebook posts, but then Facebook decided to discontinue 3D models in posts. So now I'm focusing on Snapchat lenses!

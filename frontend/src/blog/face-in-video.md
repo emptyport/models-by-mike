@@ -2,7 +2,7 @@
 path: "/blog/face-in-video-tracking-with-blender"
 date: "2019-09-03"
 title: "Face in Video Tracking With Blender"
-image: "face-in-video.jpg"
+image: "assets/face-in-video.jpg"
 ---
 
 This is a quick tutorial on how to export face in video tracking data from Blender for use in Lens Studio. This is not a tutorial on how to use Blender, Python, or Lens Studio. That being said, the script is set up to provide a mostly painless experience. This tracking script replaces the use of After Effects in [this Lens Studio guide](https://lensstudio.snapchat.com/templates/face/face-in-video/).

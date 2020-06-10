@@ -2,7 +2,7 @@
 path: "/blog/software-guide"
 date: "2019-12-27"
 title: "My Definitive Software Guide for AR"
-image: "software.jpg"
+image: "assets/software.jpg"
 ---
 
 No one's ever asked what software/resources I use when creating my filters and lenses, but I'm going to tell you anyway. Ready? Let's get started.

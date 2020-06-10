@@ -2,7 +2,7 @@
 path: "/blog/budget-hotdog-breakdown"
 date: "2019-07-17"
 title: "Budget Dancing Hot Dog Breakdown"
-image: "budget_hotdog.jpg"
+image: "assets/budget_hotdog.jpg"
 ---
 
 The dancing hot dog. It was before my time as a Snapchat user, but its popularity was such that I had seen it before.

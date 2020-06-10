@@ -17,7 +17,7 @@ export default function Template({
             />
             <div className="blog-post-container">
                 <div className="blog-post mx-auto md:w-3/4">
-                    <img className="" src={`../assets/${frontmatter.image}`} />
+                    <img className="" src={`../${frontmatter.image}`} />
                     <h1 className="text-3xl">{frontmatter.title}</h1>
                     <h2 className="my-4 text-sm">{frontmatter.date}</h2>
                     <div
