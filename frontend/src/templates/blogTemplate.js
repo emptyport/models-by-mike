@@ -27,10 +27,10 @@ export default function Template({
                     <div className="mt-8">
                         Want to work with me?{" "}
                         <Link
-                            to="/contact"
+                            to={`/contact?utm_source=blog&utm_medium=website&utm_campaign=${frontmatter.path.replace('/blog/', '')}`}
                             className="border-b-2 border-mbmYellow"
                         >
-                            Feel free to reach out!
+                            {`Let's talk!`}
                         </Link>
                     </div>
                 </div>
