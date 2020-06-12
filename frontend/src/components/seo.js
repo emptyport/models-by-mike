@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import React from "react";
 import Helmet from "react-helmet";
 
-function SEO({ description, lang, meta, title, image }) {
+function SEO({ description, lang, meta, title, image, author_long, date }) {
   const { site } = useStaticQuery(graphql`
     query DefaultSEOQuery {
       site {
@@ -11,6 +11,7 @@ function SEO({ description, lang, meta, title, image }) {
           title
           description
           author
+          author_long
           keywords
           image
         }
@@ -64,6 +65,14 @@ function SEO({ description, lang, meta, title, image }) {
           name: `twitter:description`,
           content: metaDescription,
         },
+        {
+          name: `author`,
+          content: author_long || site.siteMetadata.author_long
+        },
+        {
+          name: `date`,
+          content: date
+        }
       ]
         .concat(
           site.siteMetadata.keywords.length > 0

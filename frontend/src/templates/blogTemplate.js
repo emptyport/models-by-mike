@@ -6,14 +6,17 @@ import SEO from "../components/seo";
 export default function Template({
     data, // this prop will be injected by the GraphQL query below.
 }) {
-    const { markdownRemark } = data; // data.markdownRemark holds your post data
+    const { markdownRemark, site } = data; // data.markdownRemark holds your post data
     const { frontmatter, excerpt, html } = markdownRemark;
+    console.log(site);
     return (
         <Layout>
             <SEO
                 title={frontmatter.title}
                 description={excerpt}
                 image={`/${frontmatter.image}`}
+                author_long={site.siteMetadata.author_long}
+                date={frontmatter.date}
             />
             <div className="blog-post-container">
                 <div className="blog-post mx-auto md:w-3/4">
@@ -51,5 +54,10 @@ export const pageQuery = graphql`
                 image
             }
         }
+        site {
+            siteMetadata {
+              author_long
+            }
+          }
     }
 `;

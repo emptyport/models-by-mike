@@ -3,6 +3,7 @@ module.exports = {
     title: `Models By Mike`,
     description: `The homepage for Models By Mike, the best looking and most talented augmented reality creator this side of the Milky Way`,
     author: `@modelsbymike3d`,
+    author_long: 'Michael Porter',
     keywords: [
       `snapchat`,
       `instagram`,
