@@ -1,5 +1,5 @@
 ---
-path: ai-bingo-snapchat
+path: /blog/ai-bingo-snapchat
 date: 2020-06-12T14:16:08.919Z
 title: AI powered bingo in Snapchat
 image: assets/drew-beamer-qzwwb2udghe-unsplash.jpg
