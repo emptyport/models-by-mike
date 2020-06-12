@@ -1,0 +1,21 @@
+---
+path: ai-bingo-snapchat
+date: 2020-06-12T14:16:08.919Z
+title: AI powered bingo in Snapchat
+image: assets/drew-beamer-qzwwb2udghe-unsplash.jpg
+---
+Yesterday Snap announced a new version of [Lens Studio](https://lensstudio.snapchat.com/), version 3.0 (Lens Studio is the software that people like me use to make filters for Snapchat). Maybe the most exciting new feature is the addition of machine learning capabilities. One of the benefits to being an Official Lens Creator is beta access to new features, and along with that an invitation to see what we could come up with using the new features.
+
+My first idea was to make an automatic hashtagger. I grabbed an object classifier, put it in the filter, and added a random adjective to whatever the camera could see. For example, if I pointed the filter at my laptop, it would display something like "#GratefulLaptop." I thought it was amusing and submitted it to Snap.
+
+Snap liked the filter, but they asked if I could remove the hashtag component, and they also asked if I could think a little bigger, maybe something like a scavenger hunt or bingo. So when I say they liked the filter, they actually politely nudged me in a better direction. I loved the idea of bingo, so I got started on that right away.
+
+The first problem I ran into was my choice of classifier. When a machine learning classifier is made, you start with a ton of images, a list of what is in each image, and then after a lot of time and computer power, the resulting machine learning model is hopefully able to look at an image and tell you what it sees. The model I was using had been trained on a dataset called ImageNet. This model can identify about 1000 different things ranging from apple to dog to airplane. However, the goal of the dataset is to evaluate classifiers, so besides just having 1000 different objects, it also gets very specific in certain categories. For example, it doesn't just classify something as a dog, it tries to tell you the breed of dog. This is useful when you're trying to make an AI classifier, but not very useful if you just want to know if something is a dog and you don't care what kind. It was usable, but I wanted something more general.
+
+To solve my problem, I decided to use the COCO dataset (Common Objects in COntext) which only identifies about 80 different things, much more manageable. But there wasn't a readily available model in the format I needed for Snapchat. Instead of training my own classifier, I used something called transfer learning. When a classifier is learning, it not only has to learn what a dog is, it also has to teach itself how to look at the images, and that takes a lot of time. With transfer learning, I can take a model that is already trained, and then just retrain the classification part. This saves a lot of time because the model doesn't have to learn how to look at the images, that part was already done with the original classifier.
+
+So far so good. I have a model which works pretty well. Except it doesn't quite work that well. I discovered that, as is in the name, all the objects are seen in context. So for backpacks, those are included in COCO, but my classifier can't identify them. That's because in all the training images, the backpacks are seen from the side on someone's back or crumpled up on the floor under a table. Technically they are in the images, but not in a good form for someone playing bingo. I ended up going through the different classifications and choosing 16 good ones for my bingo game.
+
+If you've made it this far through my poorly written post I applaud your perseverance. To sum it up, the moral of all my rambling is that machine learning in Snapchat filters is awesome, revolutionary, and game changing. But at the same time there are some important restrictions. We are restricted by the accuracy of the models, and by how complex we can make them for the filters. But even with those restrictions, it is still super cool.
+
+You can try my [bingo lens here](https://www.snapchat.com/unlock/?type=SNAPCODE&uuid=5e432fc7161d483aa833294bcb6dfa25&metadata=01).
