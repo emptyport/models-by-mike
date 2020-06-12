@@ -13,7 +13,7 @@ export default function Template({
             <SEO
                 title={frontmatter.title}
                 description={excerpt}
-                image={`/assets/${frontmatter.image}`}
+                image={`/${frontmatter.image}`}
             />
             <div className="blog-post-container">
                 <div className="blog-post mx-auto md:w-3/4">
