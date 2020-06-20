@@ -1,38 +1,50 @@
 const path = require(`path`);
+const products = require("./products.json");
 
 exports.createPages = async ({ actions, graphql, reporter }) => {
-    const { createPage } = actions;
+  const { createPage } = actions;
 
-    const blogPostTemplate = path.resolve(`src/templates/blogTemplate.js`);
+  const productTemplate = path.resolve(`src/templates/productTemplate.js`);
 
-    const result = await graphql(`
-        {
-            allMarkdownRemark(
-                sort: { order: DESC, fields: [frontmatter___date] }
-                limit: 1000
-            ) {
-                edges {
-                    node {
-                        frontmatter {
-                            path
-                        }
-                    }
-                }
-            }
-        }
-    `);
-
-    // Handle errors
-    if (result.errors) {
-        reporter.panicOnBuild(`Error while running GraphQL query.`);
-        return;
-    }
-
-    result.data.allMarkdownRemark.edges.forEach(({ node }) => {
-        createPage({
-            path: node.frontmatter.path,
-            component: blogPostTemplate,
-            context: {}, // additional data can be passed via context
-        });
+  products.forEach((product) => {
+    const path = `store/${product.slug}`;
+    createPage({
+      path,
+      component: productTemplate,
+      context: product,
     });
+  });
+
+  const blogPostTemplate = path.resolve(`src/templates/blogTemplate.js`);
+
+  const result = await graphql(`
+    {
+      allMarkdownRemark(
+        sort: { order: DESC, fields: [frontmatter___date] }
+        limit: 1000
+      ) {
+        edges {
+          node {
+            frontmatter {
+              path
+            }
+          }
+        }
+      }
+    }
+  `);
+
+  // Handle errors
+  if (result.errors) {
+    reporter.panicOnBuild(`Error while running GraphQL query.`);
+    return;
+  }
+
+  result.data.allMarkdownRemark.edges.forEach(({ node }) => {
+    createPage({
+      path: node.frontmatter.path,
+      component: blogPostTemplate,
+      context: {}, // additional data can be passed via context
+    });
+  });
 };
