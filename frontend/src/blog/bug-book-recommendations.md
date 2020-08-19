@@ -1,8 +1,8 @@
 ---
-path: "/blog/bug-book-recommendations"
-date: "2020-06-20"
-title: "My Bug Book recommenations"
-image: "assets/bug_books.jpg"
+path: /blog/bug-book-recommendations
+date: 2020-06-20
+title: My Bug Book recommendations
+image: assets/bug_books.jpg
 ---
 
 A few people have asked what books I recommend for people interested in entomology, so I thought I'd put together a list. Now I'm not a professional entomologist myself, but it is a pretty serious hobby of mine and I think this is a good list for someone interested in entomology.
