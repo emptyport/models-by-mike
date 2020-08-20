@@ -49,6 +49,10 @@ function Header() {
               title: `Contact`,
             },
             {
+              route: `/bugs`,
+              title: `Bugs`,
+            },
+            {
               route: `/blog`,
               title: `Blog`,
             },
