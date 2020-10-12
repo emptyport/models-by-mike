@@ -83,6 +83,12 @@ function IndexPage() {
             Check out my Snapchat filters here!
           </a>
         </div>
+        <div className="w-full mx-auto p-4 text-center text-lg">
+          <p>{`Want to create your own Snapchat lenses and Instagram filters?`}</p>
+          <a href="https://arbootcamp.com" className="underline">
+            Start learning for free at AR Bootcamp!
+          </a>
+        </div>
       </section>
 
       <section className="mb-8">

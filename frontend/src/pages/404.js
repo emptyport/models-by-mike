@@ -10,7 +10,7 @@ function NotFoundPage() {
       <div>
         <h1 className="text-2xl mb-4">Not Found</h1>
 
-        <a href="/">
+        <a href="/" alt="The twerking alien doing the Naruto run with its arms sticking straight back">
           <img src="https://media.giphy.com/media/Phg5BqsiMHDJQeNURr/giphy.gif" />
         </a>
       </div>
