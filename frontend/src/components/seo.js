@@ -86,10 +86,6 @@ function SEO({ description, lang, meta, title, image, author_long, date }) {
       title={title}
       titleTemplate={`%s | ${site.siteMetadata.title}`}
     >
-      <script
-        src={`https://www.google.com/recaptcha/api.js?render=${process.env
-          .RECAPTCHA_KEY || "6Lc1hNYUAAAAANS0mVhv0PGuwZgaSyj7y10TnYus"}`}
-      ></script>
       <link
         href="https://fonts.googleapis.com/css?family=Nunito+Sans&display=swap"
         rel="stylesheet"
@@ -98,10 +94,6 @@ function SEO({ description, lang, meta, title, image, author_long, date }) {
         href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@700&display=swap"
         rel="stylesheet"
       ></link>
-      <style>
-        {`.grecaptcha-badge {
-  visibility: hidden;}`}
-      </style>
     </Helmet>
   );
 }

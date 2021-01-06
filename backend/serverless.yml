@@ -39,7 +39,6 @@ provider:
   environment:
     EMAIL: ${file(./config.${self:provider.stage}.json):email}
     FROM: ${file(./config.${self:provider.stage}.json):from}
-    RECAPTCHA_SECRET: ${file(./config.${self:provider.stage}.json):recaptchaSecret}
 # you can overwrite defaults here
 #  stage: dev
 #  region: us-east-1

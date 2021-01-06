@@ -83,20 +83,17 @@ module.exports = {
       },
     },
     {
-      resolve: "gatsby-plugin-google-analytics",
-      options: {
-        trackingId: "UA-137935194-2",
-        head: true,
-        anonymize: true,
-        respectDNT: true,
-      },
-    },
-    {
       resolve: "gatsby-plugin-react-svg",
       options: {
         rule: {
           include: /icons/,
         },
+      },
+    },
+    {
+      resolve: `gatsby-plugin-plausible`,
+      options: {
+        domain: `modelsbymike3d.com`,
       },
     },
   ],

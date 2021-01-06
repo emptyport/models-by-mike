@@ -12,10 +12,9 @@ class ContactPage extends React.Component {
         };
 
         this.handleSubmit = this.handleSubmit.bind(this);
-        this.getRecaptchaToken = this.getRecaptchaToken.bind(this);
     }
 
-    handleSubmit(event) {
+    async handleSubmit(event) {
         const self = this;
         self.setState({ waiting: true });
         event.preventDefault();
@@ -26,57 +25,29 @@ class ContactPage extends React.Component {
             data[key] = value;
         }
 
-        this.getRecaptchaToken(async function(err, token) {
-            console.log(err);
-            if (err) {
+        try {
+            const contact_api =
+                process.env.CONTACT_API ||
+                "https://3rh9xg5aqb.execute-api.us-east-1.amazonaws.com/prod/email";
+            const response = await fetch(contact_api, {
+                method: "POST",
+                body: JSON.stringify(data),
+            });
+            const json = await response.json();
+            if (json.status === "success") {
+                document.getElementById("contactForm").reset();
                 self.setState({ waiting: false });
-                alert("Sorry, there was a problem submitting your message");
+                alert("Thanks! I'll be in touch shortly");
             } else {
-                data.token = token;
-                try {
-                    const contact_api =
-                        process.env.CONTACT_API ||
-                        "https://3rh9xg5aqb.execute-api.us-east-1.amazonaws.com/prod/email";
-                    const response = await fetch(contact_api, {
-                        method: "POST",
-                        body: JSON.stringify(data),
-                    });
-                    const json = await response.json();
-                    if (json.status === "success") {
-                        document.getElementById("contactForm").reset();
-                        self.setState({ waiting: false });
-                        alert("Thanks! I'll be in touch shortly");
-                    } else {
-                        self.setState({ waiting: false });
-                        alert(
-                            "Sorry, there was a problem submitting your message"
-                        );
-                    }
-                } catch (err) {
-                    self.setState({ waiting: false });
-                    alert("Sorry, there was a problem submitting your message");
-                }
+                self.setState({ waiting: false });
+                alert(
+                    "Sorry, there was a problem submitting your message"
+                );
             }
-        });
-    }
-
-    getRecaptchaToken(done) {
-        const key =
-            process.env.RECAPTCHA_KEY ||
-            "6Lc1hNYUAAAAANS0mVhv0PGuwZgaSyj7y10TnYus";
-        window.grecaptcha.ready(function() {
-            try {
-                window.grecaptcha
-                    .execute(key, {
-                        action: "contactForm",
-                    })
-                    .then(function(token) {
-                        return done(null, token);
-                    });
-            } catch (e) {
-                return done(e);
-            }
-        });
+        } catch (err) {
+            self.setState({ waiting: false });
+            alert("Sorry, there was a problem submitting your message");
+        }
     }
 
     render() {
@@ -151,7 +122,22 @@ class ContactPage extends React.Component {
                             name="message"
                         />
 
-                        <button className="px-4 py-2 h-16 text-sm font-bold neu-border-button rounded-lg bg-mbmCoral">
+                        <label
+                            className="block mb-2 text-m font-bold tracking-wide"
+                            htmlFor="challenge"
+                        >
+                            What is 5 + 4?
+                        </label>
+
+                        <input
+                            className="w-full mb-6 form-input neu-inset bg-gray-800 border-0 rounded-lg border-b-2 border-mbmYellow"
+                            id="challenge"
+                            placeholder="Your answer here"
+                            type="text"
+                            name="challenge"
+                        />
+
+                        <button className="px-4 py-2 h-16 text-sm font-bold neu-border-button rounded-lg bg-mbmCoral" disabled={this.state.waiting}>
                             <div className="flex items-center tracking-wide">
                                 Submit
                                 <img
@@ -163,28 +149,6 @@ class ContactPage extends React.Component {
                                 />
                             </div>
                         </button>
-
-                        <p className="mt-0 mb-6 text-xs italic">
-                            This site is protected by reCAPTCHA and the Google{" "}
-                            <a
-                                className="underline"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                href="https://policies.google.com/privacy"
-                            >
-                                Privacy Policy
-                            </a>{" "}
-                            and{" "}
-                            <a
-                                className="underline"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                href="https://policies.google.com/terms"
-                            >
-                                Terms of Service
-                            </a>{" "}
-                            apply.
-                        </p>
                     </form>
                 </section>
             </Layout>

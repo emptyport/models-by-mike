@@ -28,6 +28,7 @@ function IndexPage() {
             className="mx-auto"
           />
         </div>
+        
       </section>
 
       <section className="mb-8">
@@ -61,12 +62,10 @@ function IndexPage() {
           <p className="text-pink-500 font-black">Instagram</p>
           <p className="text-blue-500 font-black">Facebook</p>
           <p className="mt-4">Are you interested in an effect of your own?</p>
-          <p>
-            <Link
-              className="underline text-xl"
-              to="/contact?utm_source=home&utm_medium=website&utm_campaign=none"
-            >{`Get in touch.`}</Link>
-          </p>
+          <Link
+            className="mt-6 px-4 py-2 text-sm font-bold neu-border-button rounded-lg bg-mbmCoral mx-auto text-xl align-middle"
+            to="/contact?utm_source=home&utm_medium=website&utm_campaign=none"
+          >{`Get in touch.`}</Link>  
         </div>
       </section>
 

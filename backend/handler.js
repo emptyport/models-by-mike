@@ -15,18 +15,6 @@ const logger = createLogger({
   ]
 });
 
-const validateToken = (data, done) => {
-  const options = {
-    uri: "https://www.google.com/recaptcha/api/siteverify",
-    method: "POST",
-    qs: {
-      secret: process.env.RECAPTCHA_SECRET,
-      response: data.token
-    }
-  };
-  request(options, done);
-};
-
 const sendEmail = (data, done) => {
   const body = `${data.firstName} ${data.lastName} - ${data.email} \n\n ${data.message}`;
 
@@ -59,7 +47,7 @@ module.exports.mailer = (event, context, callback) => {
   logger.info(
     `${data.firstName} ${data.lastName} | ${data.email} | ${data.message}`
   );
-  logger.info(`${data.token}`);
+  logger.info(`${data.challenge}`);
 
   const res = {
     headers: {
@@ -69,44 +57,21 @@ module.exports.mailer = (event, context, callback) => {
     body: JSON.stringify({ status: "failed" })
   };
 
-  validateToken(data, (tokenErr, captcha) => {
-    if (tokenErr) {
-      logger.error(`Error while validating token ${tokenErr}`);
+  const validAnswers = [9, '9', 'Nine', 'nine']
+  if(!validAnswers.includes(data.challenge)) {
+    logger.error('Detected spam submission');
+    return callback(null, res);
+  }
+
+  sendEmail(data, err => {
+    if (err) {
+      logger.error(`Error while sending email ${err}`);
       return callback(null, res);
     }
 
-    const captchaRes = JSON.parse(captcha.body);
-    logger.info(captchaRes);
-    if (!captchaRes.success) {
-      logger.error(`Unsuccessful verification`);
-
-      return callback(null, res);
-    }
-
-    if (captchaRes.score < 0.5) {
-      logger.error("Detected spam submission");
-      return callback(null, res);
-    }
-
-    sendEmail(data, err => {
-      const res = {
-        headers: {
-          "Access-Control-Allow-Origin": "*"
-        },
-        statusCode: 200,
-        body: JSON.stringify({ status: "success" })
-      };
-
-      if (err) {
-        logger.error(`Error while sending email ${err}`);
-
-        return callback(null, res);
-      }
-
-      logger.info("Successfully sent email");
-      res.statusCode = 200;
-      res.body = JSON.stringify({ status: "success" });
-      callback(null, res);
-    });
+    logger.info("Successfully sent email");
+    res.statusCode = 200;
+    res.body = JSON.stringify({ status: "success" });
+    callback(null, res);
   });
 };
