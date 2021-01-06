@@ -11,30 +11,7 @@ function PrivacyPage() {
       <section>
         <div className="neu-inset rounded-lg p-6 text-m">
           <p className="py-2">
-            Google Analytics is used on this site to monitor site traffic. IP
-            addresses are anonymized and no information is shared with 3rd
-            parties.
-          </p>
-          <p className="py-2">
-            This site is protected by reCAPTCHA and the Google{" "}
-            <a
-              className="underline"
-              target="_blank"
-              rel="noopener noreferrer"
-              href="https://policies.google.com/privacy"
-            >
-              Privacy Policy
-            </a>{" "}
-            and{" "}
-            <a
-              className="underline"
-              target="_blank"
-              rel="noopener noreferrer"
-              href="https://policies.google.com/terms"
-            >
-              Terms of Service
-            </a>{" "}
-            apply.
+            I use <a className="underline" href='https://plausible.io'>Plausible</a> for my website analytics so I do not collect any personal information nor use cookies on this site.
           </p>
         </div>
       </section>
