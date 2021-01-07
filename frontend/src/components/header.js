@@ -41,6 +41,10 @@ function Header() {
               title: `Home`,
             },
             {
+              route: "/twerking-alien",
+              title: "Twerking Alien",
+            },
+            {
               route: `/about`,
               title: `About`,
             },
