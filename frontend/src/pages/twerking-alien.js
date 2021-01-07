@@ -19,9 +19,9 @@ function TwerkingAlienPage() {
             src="https://media.giphy.com/media/Q7pFIzANZnpA1PC5Zg/giphy.gif"
           />
           <div className="text-center text-2xl">
-            <p>{`You danced with it`}</p>
-            <p>{`You raided Area 51 together`}</p>
-            <p>{`Your heart was forever changed by it`}</p>
+            <p>{`You danced with it!`}</p>
+            <p>{`You raided Area 51 together!`}</p>
+            <p>{`Your heart was forever changed by it!`}</p>
             <p className="text-3xl mt-4">{`It's the Twerking Alien!`}</p>
           </div>
 
