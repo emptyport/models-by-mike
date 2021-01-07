@@ -45,7 +45,7 @@ function TwerkingAlienPage() {
             title="Link to the exclusive Snapchat lens for the 80s-style T-shirt"
           >
             <img
-              className="mx-auto w-1/3 mt-6 mb-12"
+              className="mx-auto mt-6 mb-12"
               src="/assets/snapcodes/80s-alien.png"
             />
           </a>
