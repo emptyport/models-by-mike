@@ -70,6 +70,8 @@ function Header() {
               {link.title}
             </Link>
           ))}
+          <a className="block md:inline-block mt-4 md:mt-0 md:ml-6" href="https://www.buymeacoffee.com/modelsbymike3d"><img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" title="Buy Me A Coffee" alt="Buy Me A Coffee" className="w-32" /></a>
+
         </nav>
       </div>
     </header>
