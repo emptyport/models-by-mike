@@ -1,7 +1,7 @@
 import { Link } from "gatsby";
 import React, { useState } from "react";
 
-import logo from "../images/logo.png";
+import Logo from "../images/icons/logo.svg";
 
 function Header() {
   const [isExpanded, toggleExpansion] = useState(false);
@@ -10,14 +10,14 @@ function Header() {
     <header className=" z-10 w-full mx-auto my-2 rounded-lg">
       <div className="flex flex-wrap items-center justify-between max-w-4xl mx-auto p-4">
         <Link
-          className="flex items-center no-underline text-gray-300 w-1/2"
+          className="flex items-center no-underline text-gray-700 md:w-1/4 w-1/2"
           to="/"
         >
-          <img alt="Models By Mike Logo" className="w-64" src={logo} />
+          <Logo className="fill-current" />
         </Link>
 
         <button
-          className="block md:hidden neu-border-button flex items-center px-3 py-2 rounded text-gray-300"
+          className="block md:hidden neu-border-button flex items-center px-3 py-2 rounded text-gray-500"
           onClick={() => toggleExpansion(!isExpanded)}
         >
           <svg
@@ -40,38 +40,47 @@ function Header() {
               route: `/`,
               title: `Home`,
             },
-            {
-              route: "/twerking-alien",
-              title: "Twerking Alien",
-            },
-            {
-              route: `/about`,
-              title: `About`,
-            },
+            // {
+            //   route: "/twerking-alien",
+            //   title: "Twerking Alien",
+            // },
+            // {
+            //   route: `/about`,
+            //   title: `About`,
+            // },
             {
               route: `/contact`,
               title: `Contact`,
             },
-            {
-              route: `/bugs`,
-              title: `Bugs`,
-            },
+            // {
+            //   route: `/bugs`,
+            //   title: `Bugs`,
+            // },
             {
               route: `/blog`,
               title: `Blog`,
             },
           ].map((link) => (
             <Link
-              className="block md:inline-block mt-4 md:mt-0 md:ml-6 no-underline text-gray-300"
-              activeClassName="border-b-2 border-mbmYellow"
+              className="block md:inline-block mt-4 md:mt-0 md:ml-6 no-underline font-bold text-gray-700"
+              activeClassName="border-b-2 border-red-500"
               key={link.title}
               to={link.route}
             >
               {link.title}
             </Link>
           ))}
-          <a className="block md:inline-block mt-4 md:mt-0 md:ml-6" href="https://www.buymeacoffee.com/modelsbymike3d"><img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" title="Buy Me A Coffee" alt="Buy Me A Coffee" className="w-32" /></a>
-
+          {/* <a
+            className="block md:inline-block mt-4 md:mt-0 md:ml-6"
+            href="https://www.buymeacoffee.com/modelsbymike3d"
+          >
+            <img
+              src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png"
+              title="Buy Me A Coffee"
+              alt="Buy Me A Coffee"
+              className="w-32"
+            />
+          </a> */}
         </nav>
       </div>
     </header>

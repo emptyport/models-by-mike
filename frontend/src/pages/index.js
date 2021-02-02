@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "gatsby";
+import TextLoop from "react-text-loop";
 
 import Layout from "../components/layout";
 import SEO from "../components/seo";
@@ -17,19 +18,48 @@ function IndexPage() {
   return (
     <Layout>
       <SEO title="Home" />
-      <section className="mb-0">
-        <div className="flex flex-col md:flex-row content-center text-center">
-          <div className="self-center mbmHeader text-5xl">
-            Stand out from the crowd
+
+      <section className="">
+        <div className="flex flex-col md:flex-row items-center md:justify-around justify-center">
+          <div className="md:w-2/5">
+            <div className="text-5xl md:text-6xl text-gray-700 text-shadow">
+              <div>Bring your</div>
+              <div className="text-red-500 font-bold my-4">
+                <TextLoop
+                  interval={2000}
+                  springConfig={{ stiffness: 200, damping: 20 }}
+                >
+                  <span>book</span>
+                  <span>music</span>
+                  <span>campaign</span>
+                  <span>business card</span>
+                  <span>T-shirt</span>
+                  <span>invitation</span>
+                </TextLoop>
+              </div>
+              <div>to life</div>
+            </div>
+            <p className="text-left text-xl text-gray-700 mt-10 mb-6">
+              Stand out with your own augmented reality filter for Snapchat,
+              Instagram, and Facebook.
+            </p>
+            <div className="mx-auto flex md:justify-start justify-center">
+              <button className="text-gray-100 text-2xl font-bold bg-red-500 neu-border-button rounded-full px-6 py-2">
+                {`Learn how 👋`}
+              </button>
+            </div>
           </div>
-          <img
-            src={alienStill}
-            alt="Image of the twerking alien effect being used on a smartphone"
-            className="mx-auto"
-          />
+          <div className="md:w-1/3 w-full mx-2">
+            <img
+              src={alienStill}
+              alt="Image of the twerking alien effect being used on a smartphone"
+              className="mx-auto"
+            />
+          </div>
         </div>
-        
       </section>
+
+      <div className="my-36"></div>
 
       <section className="mb-8">
         <div className="flex flex-col content-center text-center text-lg">
@@ -65,7 +95,7 @@ function IndexPage() {
           <Link
             className="mt-6 px-4 py-2 text-sm font-bold neu-border-button rounded-lg bg-mbmCoral mx-auto text-xl align-middle"
             to="/contact?utm_source=home&utm_medium=website&utm_campaign=none"
-          >{`Get in touch.`}</Link>  
+          >{`Get in touch.`}</Link>
         </div>
       </section>
 
