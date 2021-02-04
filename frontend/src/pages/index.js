@@ -81,25 +81,25 @@ function IndexPage() {
 
       <section className="mt-16 md:mt-24">
         <div className="flex md:flex-row flex-col justify-around">
-          <div className="flex-grow-0">
-            <div className="text-center text-red-500 font-bold text-shadow text-4xl">
+          <div className="md:w-1/3 p-2 mb-8">
+            <div className="text-center text-red-500 font-bold text-shadow text-4xl mb-4">
               What
             </div>
-            <p>{`Ever play Pokémon Go? Augmented reality. Ever see someone puking a rainbow on Snapchat? Augmented reality? Ever see a "Which Disney character are you?" filter on Instagram? Augmented reality. Augmented reality, or AR for short, is simply enhancing the real world with something digital.`}</p>
+            <p>{`Ever play Pokémon Go? Augmented reality. Ever see someone puking a rainbow on Snapchat? Augmented reality. Ever see a "Which Disney character are you?" filter on Instagram? Augmented reality.`}</p>
           </div>
-          <div className="md:border md:border-solid border-gray-300"></div>
-          <div>
-            <div className="text-center text-red-500 font-bold text-shadow text-4xl">
+          <div className="md:border md:border-solid border-gray-300 mx-6"></div>
+          <div className="md:w-1/3 p-2 mb-8">
+            <div className="text-center text-red-500 font-bold text-shadow text-4xl mb-4">
               Why
             </div>
-            <p>{``}</p>
+            <p>{`Augmented reality, or AR for short, is a great way to get your audience involved. Views of a single filter can range anywhere from the tens of thousands up to several million, with some even receiving billions of views.`}</p>
           </div>
-          <div className="md:border md:border-solid border-gray-300"></div>
-          <div>
-            <div className="text-center text-red-500 font-bold text-shadow text-4xl">
+          <div className="md:border md:border-solid border-gray-300 mx-6"></div>
+          <div className="md:w-1/3 p-2">
+            <div className="text-center text-red-500 font-bold text-shadow text-4xl mb-4">
               How
             </div>
-            <p>{``}</p>
+            <p>{`AR filters are available on just about every mobile platform. They can be created for Snapchat, Instagram, or Facebook, embedded on a website, or integrated into your own app.`}</p>
           </div>
         </div>
       </section>
