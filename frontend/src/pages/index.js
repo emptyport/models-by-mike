@@ -4,8 +4,10 @@ import TextLoop from "react-text-loop";
 
 import Layout from "../components/layout";
 import SEO from "../components/seo";
-import olcBadge from "../images/OLC_badge.png";
+import Modal from "../components/Modal";
+import EmailSignup from "../components/EmailSignup";
 
+import olcBadge from "../images/OLC_badge.png";
 import alienStill from "../images/home/alien_still_optimized.png";
 
 import Snapchat from "../images/icons/snapchat.svg";
@@ -15,6 +17,16 @@ import Twitter from "../images/icons/twitter.svg";
 import LinkedIn from "../images/icons/linkedin.svg";
 
 function IndexPage() {
+  const [modalIsOpen, setIsOpen] = React.useState(false);
+
+  function openModal() {
+    setIsOpen(true);
+  }
+
+  function closeModal() {
+    setIsOpen(false);
+  }
+
   return (
     <Layout>
       <SEO title="Home" />
@@ -35,6 +47,8 @@ function IndexPage() {
                   <span>business card</span>
                   <span>T-shirt</span>
                   <span>invitation</span>
+                  <span>menu</span>
+                  <span>advertisement</span>
                 </TextLoop>
               </div>
               <div>to life</div>
@@ -44,7 +58,10 @@ function IndexPage() {
               Instagram, and Facebook.
             </p>
             <div className="mx-auto flex md:justify-start justify-center">
-              <button className="text-gray-100 text-2xl font-bold bg-red-500 neu-border-button rounded-full px-6 py-2">
+              <button
+                className="text-gray-100 text-2xl font-bold bg-red-500 neu-border-button rounded-full px-6 py-2"
+                onClick={openModal}
+              >
                 {`Learn how 👋`}
               </button>
             </div>
@@ -55,6 +72,34 @@ function IndexPage() {
               alt="Image of the twerking alien effect being used on a smartphone"
               className="mx-auto"
             />
+          </div>
+        </div>
+        <Modal handleClose={closeModal} show={modalIsOpen}>
+          <EmailSignup />
+        </Modal>
+      </section>
+
+      <section className="mt-16 md:mt-24">
+        <div className="flex md:flex-row flex-col justify-around">
+          <div className="flex-grow-0">
+            <div className="text-center text-red-500 font-bold text-shadow text-4xl">
+              What
+            </div>
+            <p>{`Ever play Pokémon Go? Augmented reality. Ever see someone puking a rainbow on Snapchat? Augmented reality? Ever see a "Which Disney character are you?" filter on Instagram? Augmented reality. Augmented reality, or AR for short, is simply enhancing the real world with something digital.`}</p>
+          </div>
+          <div className="md:border md:border-solid border-gray-300"></div>
+          <div>
+            <div className="text-center text-red-500 font-bold text-shadow text-4xl">
+              Why
+            </div>
+            <p>{``}</p>
+          </div>
+          <div className="md:border md:border-solid border-gray-300"></div>
+          <div>
+            <div className="text-center text-red-500 font-bold text-shadow text-4xl">
+              How
+            </div>
+            <p>{``}</p>
           </div>
         </div>
       </section>
