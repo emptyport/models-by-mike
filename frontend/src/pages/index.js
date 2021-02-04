@@ -6,6 +6,7 @@ import Layout from "../components/layout";
 import SEO from "../components/seo";
 import Modal from "../components/Modal";
 import EmailSignup from "../components/EmailSignup";
+import ContactForm from "../components/ContactForm";
 
 import olcBadge from "../images/OLC_badge.png";
 import alienStill from "../images/home/alien_still_optimized.png";
@@ -18,6 +19,15 @@ import LinkedIn from "../images/icons/linkedin.svg";
 
 function IndexPage() {
   const [modalIsOpen, setIsOpen] = React.useState(false);
+  const [contactOpen, setContactOpen] = React.useState(false);
+
+  function openContactModal() {
+    setContactOpen(true);
+  }
+
+  function closeContactModel() {
+    setContactOpen(false);
+  }
 
   function openModal() {
     setIsOpen(true);
@@ -54,15 +64,21 @@ function IndexPage() {
               <div>to life</div>
             </div>
             <p className="text-left text-xl text-gray-700 mt-10 mb-6">
-              Stand out with your own augmented reality filter for Snapchat,
-              Instagram, and Facebook.
+              Not sure if augmented reality is right for you? Get the free guide
+              to learn more!
             </p>
             <div className="mx-auto flex md:justify-start justify-center">
               <button
                 className="text-gray-100 text-2xl font-bold bg-red-500 neu-border-button rounded-full px-6 py-2"
+                onClick={openContactModal}
+              >
+                {`Get in touch`}
+              </button>
+              <button
+                className="text-gray-100 text-2xl font-bold bg-red-500 neu-border-button rounded-full px-6 py-2"
                 onClick={openModal}
               >
-                {`Learn how 👋`}
+                {`👉 Get the guide 👈`}
               </button>
             </div>
           </div>
@@ -77,6 +93,10 @@ function IndexPage() {
         <Modal handleClose={closeModal} show={modalIsOpen}>
           <EmailSignup />
         </Modal>
+
+        <Modal handleClose={closeContactModel} show={contactOpen}>
+          <ContactForm />
+        </Modal>
       </section>
 
       <section className="mt-16 md:mt-24">
@@ -85,21 +105,36 @@ function IndexPage() {
             <div className="text-center text-red-500 font-bold text-shadow text-4xl mb-4">
               What
             </div>
-            <p>{`Ever play Pokémon Go? Augmented reality. Ever see someone puking a rainbow on Snapchat? Augmented reality. Ever see a "Which Disney character are you?" filter on Instagram? Augmented reality.`}</p>
+            <ul className="list-disc">
+              <li>{`Pokémon Go`}</li>
+              <li>{`Twerking aliens`}</li>
+              <li>{`Potato boss`}</li>
+            </ul>
+            <p>{`All augmented reality.`}</p>
           </div>
           <div className="md:border md:border-solid border-gray-300 mx-6"></div>
           <div className="md:w-1/3 p-2 mb-8">
             <div className="text-center text-red-500 font-bold text-shadow text-4xl mb-4">
               Why
             </div>
-            <p>{`Augmented reality, or AR for short, is a great way to get your audience involved. Views of a single filter can range anywhere from the tens of thousands up to several million, with some even receiving billions of views.`}</p>
+            <ul className="list-disc">
+              <li>{`Fun`}</li>
+              <li>{`Interactive`}</li>
+              <li>{`Shareable`}</li>
+            </ul>
           </div>
           <div className="md:border md:border-solid border-gray-300 mx-6"></div>
           <div className="md:w-1/3 p-2">
             <div className="text-center text-red-500 font-bold text-shadow text-4xl mb-4">
               How
             </div>
-            <p>{`AR filters are available on just about every mobile platform. They can be created for Snapchat, Instagram, or Facebook, embedded on a website, or integrated into your own app.`}</p>
+            <ul className="list-disc">
+              <li>{`Snapchat`}</li>
+              <li>{`Instagram`}</li>
+              <li>{`Facebook`}</li>
+              <li>{`Your website`}</li>
+              <li>{`Your app`}</li>
+            </ul>
           </div>
         </div>
       </section>
