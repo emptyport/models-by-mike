@@ -34,6 +34,7 @@ class ContactForm extends React.Component {
       if (json.status === "success") {
         document.getElementById("contactForm").reset();
         self.setState({ waiting: false });
+        self.props.onSubmit();
         alert("Thanks! I'll be in touch shortly");
       } else {
         self.setState({ waiting: false });
@@ -63,7 +64,7 @@ class ContactForm extends React.Component {
           <input
             className="w-full mb-6 form-input neu-inset border-0 rounded-lg border-b-2  border-red-500"
             id="first-name"
-            placeholder="Phillip"
+            placeholder="Phillip J. Fry"
             type="text"
             name="firstName"
           />
@@ -87,13 +88,13 @@ class ContactForm extends React.Component {
             className="block mb-2 text-m font-bold tracking-wide"
             htmlFor="message"
           >
-            Message
+            How can I help?
           </label>
 
           <textarea
             className="w-full mb-6 form-input neu-inset border-0 rounded-lg border-b-2  border-red-500"
             id="message"
-            placeholder="Say something..."
+            placeholder="I had this idea for an awesome AR filter..."
             rows="6"
             name="message"
           />
@@ -113,21 +114,23 @@ class ContactForm extends React.Component {
             name="challenge"
           />
 
-          <button
-            className="text-gray-100 text-xl font-bold bg-red-500 neu-border-button rounded-full px-6 py-2"
-            disabled={this.state.waiting}
-          >
-            <div className="flex items-center tracking-wide">
-              Submit
-              <img
-                alt="Running alien"
-                className={`${
-                  this.state.waiting ? `block` : `hidden`
-                } w-12 min-w-0 flex-shrink`}
-                src="https://media.giphy.com/media/Phg5BqsiMHDJQeNURr/giphy.gif"
-              />
-            </div>
-          </button>
+          <div className="w-full flex justify-center">
+            <button
+              className="text-gray-100 text-xl font-bold bg-red-500 neu-border-button rounded-full px-6 py-2"
+              disabled={this.state.waiting}
+            >
+              <div className="flex items-center tracking-wide">
+                Submit
+                <img
+                  alt="Running alien"
+                  className={`${
+                    this.state.waiting ? `block` : `hidden`
+                  } w-12 min-w-0 flex-shrink`}
+                  src="https://media.giphy.com/media/Phg5BqsiMHDJQeNURr/giphy.gif"
+                />
+              </div>
+            </button>
+          </div>
         </form>
       </div>
     );
