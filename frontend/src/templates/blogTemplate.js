@@ -33,7 +33,7 @@ export default function Template({
                 "/blog/",
                 ""
               )}`}
-              className="border-b-2 border-mbmYellow"
+              className="border-b-2 border-red-500"
             >
               {`Let's talk!`}
             </Link>

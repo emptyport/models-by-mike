@@ -2,62 +2,63 @@ import React from "react";
 
 import Layout from "../components/layout";
 import SEO from "../components/seo";
+import ContactForm from "../components/ContactForm";
 
 class ContactPage extends React.Component {
-    constructor(props) {
-        super(props);
+  constructor(props) {
+    super(props);
 
-        this.state = {
-            waiting: false,
-        };
+    this.state = {
+      waiting: false,
+    };
 
-        this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
+  }
+
+  async handleSubmit(event) {
+    const self = this;
+    self.setState({ waiting: true });
+    event.preventDefault();
+    const data = {};
+
+    const formData = new FormData(event.target);
+    for (var [key, value] of formData.entries()) {
+      data[key] = value;
     }
 
-    async handleSubmit(event) {
-        const self = this;
-        self.setState({ waiting: true });
-        event.preventDefault();
-        const data = {};
-
-        const formData = new FormData(event.target);
-        for (var [key, value] of formData.entries()) {
-            data[key] = value;
-        }
-
-        try {
-            const contact_api =
-                process.env.CONTACT_API ||
-                "https://3rh9xg5aqb.execute-api.us-east-1.amazonaws.com/prod/email";
-            const response = await fetch(contact_api, {
-                method: "POST",
-                body: JSON.stringify(data),
-            });
-            const json = await response.json();
-            if (json.status === "success") {
-                document.getElementById("contactForm").reset();
-                self.setState({ waiting: false });
-                alert("Thanks! I'll be in touch shortly");
-            } else {
-                self.setState({ waiting: false });
-                alert(
-                    "Sorry, there was a problem submitting your message"
-                );
-            }
-        } catch (err) {
-            self.setState({ waiting: false });
-            alert("Sorry, there was a problem submitting your message");
-        }
+    try {
+      const contact_api =
+        process.env.CONTACT_API ||
+        "https://3rh9xg5aqb.execute-api.us-east-1.amazonaws.com/prod/email";
+      const response = await fetch(contact_api, {
+        method: "POST",
+        body: JSON.stringify(data),
+      });
+      const json = await response.json();
+      if (json.status === "success") {
+        document.getElementById("contactForm").reset();
+        self.setState({ waiting: false });
+        alert("Thanks! I'll be in touch shortly");
+      } else {
+        self.setState({ waiting: false });
+        alert("Sorry, there was a problem submitting your message");
+      }
+    } catch (err) {
+      self.setState({ waiting: false });
+      alert("Sorry, there was a problem submitting your message");
     }
+  }
 
-    render() {
-        return (
-            <Layout>
-                <SEO title="Contact" />
-                <section>
-                    <h1 className="text-2xl mb-4">Contact Me</h1>
+  render() {
+    return (
+      <Layout>
+        <SEO title="Contact" />
+        <section>
+          <h1 className="text-2xl mb-4">Contact Me</h1>
 
-                    <form
+          <ContactForm />
+
+          {/* <form
                         id="contactForm"
                         onSubmit={this.handleSubmit}
                         className="mx-auto md:w-1/2 text-gray-300"
@@ -149,11 +150,11 @@ class ContactPage extends React.Component {
                                 />
                             </div>
                         </button>
-                    </form>
-                </section>
-            </Layout>
-        );
-    }
+                    </form> */}
+        </section>
+      </Layout>
+    );
+  }
 }
 
 export default ContactPage;

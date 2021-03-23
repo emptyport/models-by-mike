@@ -56,17 +56,17 @@ class ContactForm extends React.Component {
         >
           <label
             className="block mb-2 text-m font-bold tracking-wide"
-            htmlFor="first-name"
+            htmlFor="name"
           >
             Name
           </label>
 
           <input
             className="w-full mb-6 form-input neu-inset border-0 rounded-lg border-b-2  border-red-500"
-            id="first-name"
+            id="name"
             placeholder="Phillip J. Fry"
             type="text"
-            name="firstName"
+            name="name"
           />
 
           <label
