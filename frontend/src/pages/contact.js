@@ -15,38 +15,8 @@ class ContactPage extends React.Component {
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
-  async handleSubmit(event) {
-    const self = this;
-    self.setState({ waiting: true });
-    event.preventDefault();
-    const data = {};
-
-    const formData = new FormData(event.target);
-    for (var [key, value] of formData.entries()) {
-      data[key] = value;
-    }
-
-    try {
-      const contact_api =
-        process.env.CONTACT_API ||
-        "https://3rh9xg5aqb.execute-api.us-east-1.amazonaws.com/prod/email";
-      const response = await fetch(contact_api, {
-        method: "POST",
-        body: JSON.stringify(data),
-      });
-      const json = await response.json();
-      if (json.status === "success") {
-        document.getElementById("contactForm").reset();
-        self.setState({ waiting: false });
-        alert("Thanks! I'll be in touch shortly");
-      } else {
-        self.setState({ waiting: false });
-        alert("Sorry, there was a problem submitting your message");
-      }
-    } catch (err) {
-      self.setState({ waiting: false });
-      alert("Sorry, there was a problem submitting your message");
-    }
+  handleSubmit() {
+    console.log("done");
   }
 
   render() {
@@ -56,7 +26,7 @@ class ContactPage extends React.Component {
         <section>
           <h1 className="text-2xl mb-4">Contact Me</h1>
 
-          <ContactForm />
+          <ContactForm onSubmit={this.handleSubmit} />
 
           {/* <form
                         id="contactForm"
